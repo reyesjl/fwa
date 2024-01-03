@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}f5{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'f5index:home' %}">Home</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
