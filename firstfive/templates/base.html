@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>{% block title %}f5{% endblock %}</title>
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <nav>
-        <a href="{% url 'f5index:home' %}">Home</a>
+    <div class="navigation-strip"></div>
+    <nav class="navigation-bar">
+        <a id="logo-link" class="navigation-link" href="{% url 'f5index:home' %}">F5R</a>
+
+        <a class="navigation-link" aria-current="home" href="{% url 'f5index:home' %}">Home</a>
+        <a class="navigation-link" href="{% url 'f5index:about' %}">About</a>
+        <a class="navigation-link" href="{% url 'f5index:store' %}">Store</a>
+        <a class="navigation-link" href="{% url 'f5index:services' %}">Services</a>
     </nav>
     {% block content %}
     {% endblock %}
