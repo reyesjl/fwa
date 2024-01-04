@@ -2,6 +2,8 @@
 
 {% block title %} Store page {% endblock %}
 
+{% load static %}
+
 {% block extra_head %}
     <meta name="description" content="Shop at First Five Rugby Store for premium rugby apparel and merchandise. Discover our range of streetwear, vintage jerseys, and exclusive rugby gear.">
 {% endblock %}
@@ -11,7 +13,29 @@
     <!-- Store Section -->
     <section id="store-section">
         <h1>Store</h1>
-        <p><em>At the heart of North American rugby</em></p> 
+        <p><em>Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</em></p> 
+        
+        <hr />
+        
+        
+    </section>
+
+    <section id="featured-section">
+        <h2>Featured</h2>
+        <div class="product">
+            <h3>Test Media Vintage Rugby Polo</h3>
+            <img width="100%" src="{% static 'media/store/testmedia-image1.jpg' %}" alt="test media vintage jersey"/>
+            
+            <h4>Description</h4>
+            <p>This rugby shirt was designed with the purpose of expressing the versatility <strong>Test Media</strong> approaches every project with. It's a nod to our shared passion for streetwear, because they are more than just a media company. We want to share what is possible when you have a clear vision, are driven by purpose, and bring intensity into your line of work.</p>
+
+            <p>As <strong>First Five</strong> we want to feature this item as a token of our appreciation for the collaborative effort and joint vision shared by both entities. It's a preview of what's to come, and a promise that our platform will be a home for quality, dreams, and determination.</p>
+
+            <p>Enjoy.</p>
+
+            <h4>Materials</h4>
+            <p>100% French Terry Cotton</p>
+        </div>
     </section>
 </main>
 {% endblock %}
