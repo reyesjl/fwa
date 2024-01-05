@@ -6,6 +6,7 @@
 
 {% block extra_head %}
     <meta name="description" content="Shop at First Five Rugby Store for premium rugby apparel and merchandise. Discover our range of streetwear, vintage jerseys, and exclusive rugby gear.">
+    <link rel="stylesheet" href="{% static 'css/store.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -23,19 +24,42 @@
     <section id="featured-section">
         <h2>Featured</h2>
         <div class="product">
-            <h3>Test Media Vintage Rugby Polo</h3>
+            <h3>Neo Classic Rugby Jersey by Test Media</h3>
             <img width="100%" src="{% static 'media/store/testmedia-image1.jpg' %}" alt="test media vintage jersey"/>
             
             <h4>Description</h4>
             <p>This rugby shirt was designed with the purpose of expressing the versatility <strong>Test Media</strong> approaches every project with. It's a nod to our shared passion for streetwear, because they are more than just a media company. We want to share what is possible when you have a clear vision, are driven by purpose, and bring intensity into your line of work.</p>
 
-            <p>As <strong>First Five</strong> we want to feature this item as a token of our appreciation for the collaborative effort and joint vision shared by both entities. It's a preview of what's to come, and a promise that our platform will be a home for quality, dreams, and determination.</p>
+            <p>As <strong>First Five</strong> we want to feature this item as a token of our appreciation for the collaborative effort and joint vision shared by both entities. It's a preview of what's to come, and a promise that our platform will be home to a community built on quality and passion.</p>
+
+            
 
             <p>Enjoy.</p>
 
-            <h4>Materials</h4>
-            <p>100% French Terry Cotton</p>
+            <div class="product-details">
+                <div class="detail">
+                    <h4>Details</h4>
+                    <p>The garment features white embroidery patch logos on the chest and back of the neck, black embroidery of a binary code sequence that reads 'growth', and a white woven hem tag on the bottom right that reads 'TEST MEDIA', including a unique number indicating the individual order in which the garment was made (e.g., 01/50).</p>
+
+                    <h4>Materials</h4>
+                    <p>100% French Terry Cotton</p>
+                    <p>300 GSM Thickness (sweatshirt / hoodie)</p>
+
+                </div>
+                <div class="detail">
+                    <h4>Stock</h4>
+                    <p>10</p>
+                </div>
+                <div class="detail">
+                    <h4>Price</h4>
+                    <p>$60.00</p>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <section>
+
     </section>
 </main>
 {% endblock %}
