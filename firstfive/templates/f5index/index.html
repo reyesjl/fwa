@@ -41,7 +41,7 @@
             <button id="next-button">></button>
         </div>
         <div class="sidebar">
-            <h2>Recent Products</h2>
+            <h2>Selling Now</h2>
             <ul>
                 {% for product in products %}
                     <li><a href="{% url 'product:product_list' %}">{{ product.name }}</a></li>
