@@ -41,6 +41,13 @@
             <button id="next-button">></button>
         </div>
         <div class="sidebar">
+            <h2>Recent Products</h2>
+            <ul>
+                {% for product in products %}
+                    <li><a href="{% url 'product:product_list' %}">{{ product.name }}</a></li>
+                {% endfor %}
+            </ul>
+            
             <h2>Recent News</h2>
             <ul>
                 <li><a href="#">2024 Women's Rugby Milestones</a></li>
@@ -50,11 +57,6 @@
                 <li><a href="#">Giteau's MLR Comeback</a></li>
                 <li><a href="#">Eddie Jones in Japan</a></li>
                 <!-- Add more blog titles as needed -->
-            </ul>
-
-            <h2>Recent Products</h2>
-            <ul>
-                <li><a href="#">Neo Classic Rugby Jersey by Test Media</a></li>
             </ul>
         </div>
     </section>
