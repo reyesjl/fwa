@@ -14,8 +14,8 @@ db.sqlite3
 
 # Media and static files
 media/
-static/
 staticfiles/
+*.sh
 
 # MacOS system files
 .DS_Store
