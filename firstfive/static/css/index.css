@@ -1,0 +1,25 @@
+.sidebar {
+    width: auto;
+}
+
+.sidebar h2 {
+    margin-bottom: 15px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: darkred;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}

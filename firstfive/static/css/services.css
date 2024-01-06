@@ -1,0 +1,39 @@
+#player-services {
+    text-align: center;
+}
+
+.service-title {
+    font-size: 1.8em;
+}
+
+
+
+.button-action  {
+	padding: 4px 6px;
+	background-color: darkred;
+	color: white;
+	margin-right: 5px;
+	text-decoration: none;
+}
+
+.info-action {
+	color: darkred;
+}
+	
+
+.service-subtitle {
+    color: gray;
+}
+
+.service-frame {
+    padding: 20px 0;
+}
+
+.frame-window {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.frame-window video {
+    width: 100%;
+}
