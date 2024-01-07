@@ -100,6 +100,7 @@ form {
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],
+form input[type="number"],
 form select,
 form textarea {
     box-sizing: border-box;
@@ -148,7 +149,7 @@ form textarea {
 /* Dropdown styling */
 form select {
     appearance: none;
-    background: url("path/to/arrow-icon.png") no-repeat right center / 15px;
+    /* background: url("path/to/arrow-icon.png") no-repeat right center / 15px; */
     /* Adjust the background image URL and size based on your preference */
 }
 
