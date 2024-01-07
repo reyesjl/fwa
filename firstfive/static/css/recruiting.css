@@ -1,3 +1,11 @@
+.service-title {
+    font-size: 1.8em;
+}
+
+.service-subtitle {
+    color: gray;
+}
+
 #apply-button {
     padding: 15px 50px;
     background-color: darkred;
