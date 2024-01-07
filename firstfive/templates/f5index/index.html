@@ -41,6 +41,14 @@
             <button id="next-button">></button>
         </div>
         <div class="sidebar">
+            <h2>Our Services</h2>
+            <ul>
+                <li><a href="{% url 'f5index:services' %}">Player Recruiting</a></li>
+                <li><a href="{% url 'f5index:services' %}">Team Solutions</a></li>
+                <li><a href="{% url 'f5index:services' %}">Custom Canterbury Kit</a></li>
+                <li><a href="{% url 'f5index:services' %}">Player Programs</a></li>
+            </ul>
+
             <h2>Selling Now</h2>
             <ul>
                 {% for product in products %}
@@ -53,11 +61,10 @@
                 <li><a href="#">2024 Women's Rugby Milestones</a></li>
                 <li><a href="#">MLR 2024: New Single-Table Format</a></li>
                 <li><a href="#">Growth Trajectory of MLS/MLR</a></li>
-                <li><a href="#">Pivotal Year in Women’s Rugby</a></li>
                 <li><a href="#">Giteau's MLR Comeback</a></li>
                 <li><a href="#">Eddie Jones in Japan</a></li>
                 <!-- Add more blog titles as needed -->
-            </ul>
+            </ul>            
         </div>
     </section>
 </main>
