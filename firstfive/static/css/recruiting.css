@@ -12,3 +12,13 @@
     text-decoration: none;
     color: whitesmoke;
 }
+
+#submit-button {
+    padding: 15px 50px;
+    background-color: darkred;
+    text-decoration: none;
+    color: whitesmoke;
+    display: inline-block;  /* Ensures block-level behavior with padding */
+    border: none;  /* Removes default button border */
+    cursor: pointer;  /* Changes cursor on hover */
+}
