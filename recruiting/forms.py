@@ -4,4 +4,4 @@ from .models import PlayerEntry
 class PlayerEntryForm(forms.ModelForm):
     class Meta:
         model = PlayerEntry
-        exlude = ['status'] # This is for staff usage only
+        exclude = ['status'] # This is for staff usage only
