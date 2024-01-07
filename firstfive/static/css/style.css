@@ -89,6 +89,74 @@ body {
     padding-top: 54px; /* Adjust this value based on the total height of the navigation strip and navigation bar */
 }
 
+/* General form styling */
+form {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Input styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select,
+form textarea {
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    vertical-align: baseline;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: .16px;
+    border-radius: 0;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    background-color: #f4f4f4;
+    padding: 0 16px;
+    color: #161616;
+    transition: background-color 70ms cubic-bezier(.2, 0, .38, .9), outline 70ms cubic-bezier(.2, 0, .38, .9);
+}
+
+/* Input focus styling */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form select:focus,
+form textarea:focus {
+    outline: 2px solid #0f62fe;
+    outline-offset: -2px;
+}
+
+/* Label styling */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Textarea styling */
+form textarea {
+    height: auto; /* Allow textarea to expand based on content */
+    padding-top: 10px;
+}
+
+/* Dropdown styling */
+form select {
+    appearance: none;
+    background: url("path/to/arrow-icon.png") no-repeat right center / 15px;
+    /* Adjust the background image URL and size based on your preference */
+}
+
+/* Remove default styles for dropdown arrow in some browsers */
+form select::-ms-expand {
+    display: none;
+}
+
 
 @media only screen and (max-width: 769px) {
     .navigation-bar {
