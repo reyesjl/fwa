@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Player Entry Form {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+    <meta name="description" content="Submit your application to join our player recruiting rugby program.">
+    <link rel="stylesheet" href="{% static 'css/recruiting.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section id="apply-form-section">
+        <h2 class="section-title">Apply Now</h2>
+        <p>Submit your application to join our rugby program.</p>
+        <form method="post" action="{% url 'recruiting:apply' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button id="submit-button" type="submit">Submit Application</button>
+        </form>
+    </section>
+</main>
+{% endblock %}
