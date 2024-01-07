@@ -5,6 +5,11 @@
     font-size: 1.8em;
 }
 
+.service-title a {
+    color: darkred;
+    text-decoration: none;
+}
+
 .button-action  {
 	padding: 4px 6px;
 	background-color: darkred;
