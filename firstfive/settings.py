@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'f5index',
     'product',
+    'recruiting',
 ]
 
 MIDDLEWARE = [
