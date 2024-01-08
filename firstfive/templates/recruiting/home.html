@@ -28,35 +28,16 @@
     <section id="schools-section">
         <h2 class="section-title">Our Schools</h2>
 
-        <!-- School 1 -->
-        <article class="school">
-            <h3>University of Mary Washington</h3>
-            <ul>
-                <li>School Level: College</li>
-                <li>Location: USA</li>
-                <li>Description: Immerse yourself in the rich academic and rugby culture at the University of Mary Washington. Our college provides a dynamic environment where students excel academically and athletes thrive on the rugby field. Join a community dedicated to both education and sports, shaping well-rounded individuals.</li>
-            </ul>
-        </article>
-
-        <!-- School 2 -->
-        <article class="school">
-            <h3>Kutztown</h3>
-            <ul>
-                <li>School Level: College</li>
-                <li>Location: USA</li>
-                <li>Description: At Kutztown, we blend academic excellence with a passion for rugby. As a college committed to holistic development, we offer a vibrant rugby program that allows students to showcase their athletic prowess. Join us on a journey where education and sportsmanship go hand in hand.</li>
-            </ul>
-        </article>
-
-        <!-- School 2 -->
-        <article class="school">
-            <h3>George Mason</h3>
-            <ul>
-                <li>School Level: College</li>
-                <li>Location: USA</li>
-                <li>Description: George Mason University, located in the heart of the USA, is home to a thriving rugby community. Our college emphasizes the importance of both intellectual and athletic growth. Engage in a transformative experience where you can pursue academic achievements while being an integral part of our rugby legacy.</li>
-            </ul>
-        </article>
+        {% for school in schools %}
+            <article class="school">
+                <h3>{{ school.name }}</h3>
+                <ul>
+                    <li>School Level: {{ school.school_level }}</li>
+                    <li>Location: {{ school.location }}</li>
+                    <li>Description: {{ school.description }}</li>
+                </ul>
+            </article>
+        {% endfor %}
     </section>
     <section id="contact-section">
         <h2 class="section-title">Contact Us</h2>

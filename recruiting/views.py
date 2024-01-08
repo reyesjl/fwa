@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
+from .models import School
 from .forms import PlayerEntryForm
 
 def home(request):
-    return render(request,'recruiting/home.html')
+    schools = School.objects.all()
+    return render(request,'recruiting/home.html', {'schools': schools})
 
 def player_entry_view(request):
     if request.method == 'POST':
