@@ -14,14 +14,22 @@
     <section id="recruiting-section">
         <h1>Player Recruiting</h1>
         <p><em>Sponsored by Strong Lad Rugby</em></p>
+        {% comment %}
         <ul>
             <li>25 years of experience</li>
             <li>6 Schools to attend</li>
             <li>4 countries to explore</li>
             <li>Prep, Highschool, & University years</li>
         </ul>
+        {% endcomment %}
     </section>
     <section id="apply-section">
+        <div class="frame-window">
+            <video controls autoplay playsinline>
+                <source src="{% static 'media/services/recruiting.mp4' %}" type="video/mp4">
+                St Joseph's rugby festival
+            </video>
+        </div>
         <h3 class="section-title">Submit an application today.</h3>
         <a id="apply-button" href="{% url 'recruiting:apply' %}">Apply Now</a>
     </section>

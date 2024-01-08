@@ -2,6 +2,10 @@
     font-size: 1.8em;
 }
 
+video {
+    max-width: 100%;
+}
+
 .service-subtitle {
     color: gray;
 }
