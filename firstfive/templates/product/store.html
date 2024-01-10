@@ -29,24 +29,7 @@
                 <img width="100%" src="{{ product.primary_image_url }}" alt="{{ product.name }}"/>
             </a>
 
-            {% comment %}
-            <h4>Description</h4>
-            <p>{{ product.description }}</p>
-
             <div class="product-details">
-                <!-- Loop through product details if you have them as a separate model -->
-                {% for detail in product.productdetail_set.all %}
-                <div class="detail">
-                    <h4>Unique Features</h4>
-                    <p>{{ detail.unique_features }}</p>
-
-                    <h4>Materials</h4>
-                    <p>{{ detail.materials }}</p>
-
-                    <h4>Thickness</h4>
-                    <p>{{ detail.weight }}</p>
-                </div>
-                {% endfor %}
                 <div class="detail">
                     <h4>Stock</h4>
                     <p>{{ product.stock }}</p>
@@ -56,7 +39,6 @@
                     <p>${{ product.price }}</p>
                 </div>
             </div>
-            {% endcomment %}
         </div>
         {% endfor %}
     </section>
