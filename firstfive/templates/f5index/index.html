@@ -52,7 +52,7 @@
             <h2>Selling Now</h2>
             <ul>
                 {% for product in products %}
-                    <li><a href="{% url 'product:product_list' %}">{{ product.name }}</a></li>
+                    <li><a href="{% url 'product:store' %}">{{ product.name }}</a></li>
                 {% endfor %}
             </ul>
             

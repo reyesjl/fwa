@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %} Product Page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+<meta name="description" content="Shop at First Five Rugby Store for premium rugby apparel and merchandise. Discover our range of streetwear, vintage jerseys, and exclusive rugby gear.">
+<link rel="stylesheet" href="{% static 'css/store.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section id="products-section">
+        <!-- Example of a product loaded dynamically -->
+        <div class="product">
+            <h3>{{ product.name }}</h3>
+            <img width="100%" src="{{ product.primary_image_url }}" alt="{{ product.name }}"/>
+
+            <h4>Description</h4>
+            <p>{{ product.description }}</p>
+
+            <div class="product-details">
+                {% for detail in product.productdetail_set.all %}
+                <div class="detail">
+                    <h4>Unique Features</h4>
+                    <p>{{ detail.unique_features }}</p>
+
+                    <h4>Materials</h4>
+                    <p>{{ detail.materials }}</p>
+
+                    <h4>Thickness</h4>
+                    <p>{{ detail.weight }}</p>
+                </div>
+                {% endfor %}
+                <div class="detail">
+                    <h4>Stock</h4>
+                    <p>{{ product.stock }}</p>
+                </div>
+                <div class="detail">
+                    <h4>Price</h4>
+                    <p>${{ product.price }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+{% endblock %}
