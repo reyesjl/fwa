@@ -46,3 +46,14 @@
 .detail p {
     margin: 0;
 }
+
+.purchase-link {
+    margin-top: 15px;
+    width: fit-content;
+    padding: 15px 50px;
+    background-color: darkred;
+    text-decoration: none;
+    color: whitesmoke;
+    border: none;  /* Removes default button border */
+    cursor: pointer;  /* Changes cursor on hover */
+}

@@ -35,13 +35,22 @@
                 {% endfor %}
                 <div class="detail">
                     <h4>Stock</h4>
-                    <p>{{ product.stock }}</p>
+                    {% if product.stock > 0 %}
+                        <p>{{ product.stock }}</p>
+                    {% else %}
+                        <p class="sold-out">SOLD OUT</p>
+                    {% endif %}
                 </div>
                 <div class="detail">
                     <h4>Price</h4>
                     <p>${{ product.price }}</p>
                 </div>
             </div>
+            {% if product.stock > 0 %}
+                <a class="purchase-link" href="{% url 'product:purchase' product.id %}">Purchase</a>
+            {% else %}
+                <a class="purchase-link" href="https://www.instagram.com/firstfiverugby/">DM us to request stock.</a>
+            {% endif %}
         </div>
     </section>
 </main>
