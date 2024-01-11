@@ -17,6 +17,7 @@ SECURE_HSTS_SECONDS = config('SECURE_HSTS_SECONDS', default=0, cast=int)
 # Configure stripe keys and settings
 STRIPE_PUBLIC_KEY = config('STRIPE_PUBLIC_TEST')
 STRIPE_SECRET_KEY = config('STRIPE_PRIVATE_TEST')
+STRIPE_SUCCESS_WEBHOOK_PRIVATE = config('STRIPE_SUCCESS_WEBHOOK_PRIVATE')
 
 # Application definition
 INSTALLED_APPS = [
