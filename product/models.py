@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Product(models.Model):
     name = models.CharField(max_length=200)
@@ -12,6 +13,10 @@ class Product(models.Model):
         if primary_image and primary_image.image:
             return primary_image.image.url
         return ''
+    
+    def get_absolute_url(self):
+        # Reverse function is used to generate the URL based on the product's primary key
+        return reverse('product:product_detail', args=[str(self.pk)])
 
     def __str__(self):
         return self.name
