@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
+from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from django.urls import reverse
 from .models import Product
@@ -42,6 +43,7 @@ def purchase(request, product_id):
 def success(request):
     return render(request, 'product/success.html')
 
+@csrf_exempt
 def payment_success_webhook(request):
     payload = request.body
     sig_header = request.headers.get('Stripe-Signature')
