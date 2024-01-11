@@ -26,3 +26,42 @@
     border: none;  /* Removes default button border */
     cursor: pointer;  /* Changes cursor on hover */
 }
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 0.5em;
+}
+
+.school {
+    margin-bottom: 10px;
+    width: 30%;
+    cursor: pointer;
+}
+
+.school-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 769px) {
+    .school {
+        width: 100%;
+    }
+}

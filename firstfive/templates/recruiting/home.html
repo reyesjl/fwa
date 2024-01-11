@@ -36,16 +36,18 @@
     <section id="schools-section">
         <h2 class="section-title">Our Schools</h2>
 
-        {% for school in schools %}
-            <article class="school">
-                <h3>{{ school.name }}</h3>
-                <ul>
-                    <li>School Level: {% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</li>
-                    <li>Location: {{ school.location }}</li>
-                    <li>Description: {{ school.description }}</li>
-                </ul>
-            </article>
-        {% endfor %}
+        <div class="school-list">
+            {% for school in schools %}
+            <details class="school">
+                <summary>
+                    {{ school.name }}, {{ school.location }}
+                </summary>
+                
+                <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
+                <p>{{ school.description }}</p>
+            </details>
+            {% endfor %}
+        </div>
     </section>
     <section id="contact-section">
         <h2 class="section-title">Contact Us</h2>
