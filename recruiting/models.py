@@ -32,6 +32,15 @@ class School(models.Model):
     school_level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     location = models.CharField(max_length=100)
     description = models.TextField()
+    national_rank = models.IntegerField(default=0)
+    student_body = models.IntegerField(default=0)
+    education_description = models.TextField(default='')
+    attendance_cost = models.IntegerField(default=0)
+    top_programs = models.CharField(max_length=250, default='math program')
+    rugby_description = models.TextField(default='')
+    rugby_rank = models.IntegerField(default=0)
+    rugby_coach= models.CharField(default='', max_length=50)
+    rugby_video_link = models.CharField(default='',max_length=100)
 
     def __str__(self):
         return f"{self.name} - {self.location}"
