@@ -7,6 +7,8 @@
 {% block extra_head %}
 <meta name="description" content="This is a recruitment page showing the details for a specific rugby school on our platform.">
 <link rel="stylesheet" href="{% static 'css/school.css' %}">
+<link rel="stylesheet" href="{% static 'css/accordion.css' %}">
+<script src="{% static 'js/accordion.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -25,6 +27,36 @@
             <p class="foreword">Academic Excellence</p>
             <h1 class="title">Elevate Your Learning Experience at a Premier Academic Institution</h1>
             <p class="subtitle">Explore the Academic Brilliance of this Select School Featured on First Five Rugby. Discover Why These Institutions Stand Out as Pinnacle Hubs of Knowledge and Achievement.</p>
+        </div>
+        <div class="secondary">
+            <div class="image-wrapper">
+                <img src="{% static 'media/recruiting/school-generic.png' %}" alt="photograph of schooling in session"/>
+            </div>
+            <div class="accordion-wrapper">
+                <button class="accordion">Top Programs</button>
+                <div class="panel">
+                    <p>School is known for the following programs.</p>
+                    <ul class="program-list">
+                        {% for program in top_programs %}
+                            <li>{{ program }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <button class="accordion">Nationally Ranked</button>
+                <div class="panel">
+                    <p>School is ranked {{ school.national_rank }} in the nation.</p>
+                </div>
+
+                <button class="accordion">Student Body</button>
+                <div class="panel">
+                    <p>School has {{ school.student_body}} student.</p>
+                </div>
+
+                <button class="accordion">Attendance Costs</button>
+                <div class="panel">
+                    <p>The cost to attend is ${{school.attendance_cost}}</p>
+                </div>
+            </div>
         </div>
     </section>
     
