@@ -20,7 +20,10 @@ def player_entry_view(request):
 
 def school_detail(request, school_id):
     school = get_object_or_404(School, pk=school_id)
-    return render(request, 'recruiting/school_detail.html', {'school':school})
+
+    # Split comma-separated values into a list
+    top_programs = school.top_programs.split(',')
+    return render(request, 'recruiting/school_detail.html', {'school':school, 'top_programs':top_programs})
 
 def success(request):
     return render(request, 'recruiting/success.html')
