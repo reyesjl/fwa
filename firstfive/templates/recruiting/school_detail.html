@@ -36,7 +36,11 @@
                 </div>
                 <div class="secondary">
                     <div class="image-wrapper">
-                        <img src="{{ school.get_school_image }}" alt="photograph of schooling in session"/>
+                        {% if school.get_school_image %}
+                            <img src="{{ school.get_school_image }}" alt="School Image"/>
+                        {% else %}
+                            <img src="{% static 'media/recruiting/generic-school.jpg' %}" alt="Generic School Image"/>
+                        {% endif %}
                     </div>
                     <div class="accordion-wrapper">
                         <button class="accordion">Top Programs</button>
@@ -72,8 +76,12 @@
                     <p class="subtitle">Immerse Yourself in the Thriving Rugby Culture at This Institution. Unleash Your Potential with Outstanding Coaching and Unforgettable Sporting Moments.</p>
                 </div>
                 <div class="secondary">
-                    <div class="image-wrapper flip">
-                        <img src="{{ school.get_rugby_image }}" alt="photograph of on going rugby match in the mud"/>
+                    <div class="image-wrapper">
+                        {% if school.get_school_image %}
+                            <img src="{{ school.get_school_image }}" alt="Rugby Image"/>
+                        {% else %}
+                            <img src="{% static 'media/recruiting/generic-rugby.jpg' %}" alt="Generic Rugby Image"/>
+                        {% endif %}
                     </div>
                     <div class="accordion-wrapper">
                         <button class="accordion">Our Rugby</button>
