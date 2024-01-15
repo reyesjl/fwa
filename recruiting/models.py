@@ -29,7 +29,7 @@ class School(models.Model):
     ]
 
     name = models.CharField(max_length=100)
-    level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
+    school_level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     location = models.CharField(max_length=100)
     description = models.TextField()
 
