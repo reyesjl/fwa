@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} School Page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+<meta name="description" content="This is a recruitment page showing the details for a specific rugby school on our platform.">
+<link rel="stylesheet" href="{% static 'css/school.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section id="school-section">
+        <h1>{{ school.name }}, {{ school.location }}</h1>
+        <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
+        <p>{{ school.description }}</p>
+    </section>
+</main>
+{% endblock %}
