@@ -1,0 +1,41 @@
+.school-title {
+    font-size: 5em;
+}
+
+.school-info {
+    color: navy;
+    display: flex;
+    justify-content: space-between;
+}
+
+.school-description {
+    text-align: center;
+    letter-spacing: .2rem;
+    font-size: 1.1em;
+}
+
+.apply-button {
+    display: block;
+    width: 50%;
+    font-size: 2em;
+    padding: 1rem 3rem;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    margin: 3rem auto;
+    background-color: darkred;
+}
+
+@media only screen and (max-width: 769px) {
+    .school-title {
+        font-size: 3em;
+    }
+
+    .school-description {
+        text-align: left;
+    }
+
+    .apply-button {
+        width: auto;
+    }
+}
