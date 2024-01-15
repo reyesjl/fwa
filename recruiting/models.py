@@ -34,13 +34,13 @@ class School(models.Model):
     description = models.TextField()
     national_rank = models.IntegerField(default=0)
     student_body = models.IntegerField(default=0)
-    education_description = models.TextField(default='')
+    education_description = models.TextField(default='', null=True)
     attendance_cost = models.IntegerField(default=0)
     top_programs = models.CharField(max_length=250, default='math program')
-    rugby_description = models.TextField(default='')
+    rugby_description = models.TextField(default='', null=True)
     rugby_rank = models.IntegerField(default=0)
-    rugby_coach= models.CharField(default='', max_length=50)
-    rugby_video_link = models.CharField(default='',max_length=100)
+    rugby_coach= models.CharField(default='', max_length=50, null=True)
+    rugby_video_link = models.CharField(default='',max_length=100, null=True)
 
     def __str__(self):
         return f"{self.name} - {self.location}"
