@@ -2,14 +2,6 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 class PlayerEntry(models.Model):
-    COUNTRY_CHOICES = [
-        ('USA', 'United States of America'),
-        ('IRE', 'Ireland'),
-        ('SCT', 'Scotland'),
-        ('ENG', 'England'),
-        # Add more country choices as needed
-    ]
-
     STATUS_CHOICES = [
         ('Pending', 'Pending'),
         ('Reviewed', 'Reviewed'),
@@ -19,7 +11,6 @@ class PlayerEntry(models.Model):
 
     name = models.CharField(max_length=100)
     age = models.IntegerField(validators=[MinValueValidator(14)])
-    country_of_interest = models.CharField(max_length=3, choices=COUNTRY_CHOICES)
     school_of_interest = models.CharField(max_length=100)
     rugby_history = models.TextField()
     cover_letter = models.TextField()
