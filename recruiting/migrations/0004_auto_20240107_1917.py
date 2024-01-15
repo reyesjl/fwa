@@ -8,19 +8,19 @@ def create_initial_schools(apps, schema_editor):
     # Add initial schools
     School.objects.create(
         name='University of Mary Washington',
-        school_level='CO',
+        level='CO',
         location='USA',
         description='Immerse yourself in the rich academic and rugby culture at the University of Mary Washington. Our college provides a dynamic environment where students excel academically and athletes thrive on the rugby field. Join a community dedicated to both education and sports, shaping well-rounded individuals.'
     )
     School.objects.create(
         name='Kutztown',
-        school_level='CO',
+        level='CO',
         location='USA',
         description='At Kutztown, we blend academic excellence with a passion for rugby. As a college committed to holistic development, we offer a vibrant rugby program that allows students to showcase their athletic prowess. Join us on a journey where education and sportsmanship go hand in hand.'
     )
     School.objects.create(
         name='George Mason',
-        school_level='CO',
+        level='CO',
         location='USA',
         description='George Mason University, located in the heart of the USA, is home to a thriving rugby community. Our college emphasizes the importance of both intellectual and athletic growth. Engage in a transformative experience where you can pursue academic achievements while being an integral part of our rugby legacy.'
     )

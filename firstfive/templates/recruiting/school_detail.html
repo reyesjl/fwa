@@ -15,7 +15,7 @@
         <h1 class="school-title">{{ school.name }}</h1>
         <div class="school-info">
             <p>{{ school.location }}</p>
-            <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
+            <p>{% if school.level == 'HS' %}High School{% elif school.level == 'CO' %}College{% endif %}</p>
         </div>
         <p class="school-description">{{ school.description }}</p>
         <a class="apply-button" href="{% url 'recruiting:apply' %}">Apply Now</a>

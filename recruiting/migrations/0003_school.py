@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
-                ('school_level', models.CharField(choices=[('HS', 'High School'), ('CO', 'College')], max_length=20)),
+                ('level', models.CharField(choices=[('HS', 'High School'), ('CO', 'College')], max_length=20)),
                 ('location', models.CharField(max_length=100)),
                 ('description', models.TextField()),
             ],

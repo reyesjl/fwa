@@ -23,13 +23,13 @@ class PlayerEntry(models.Model):
         return f"{self.name} - {self.country_of_residence}"
     
 class School(models.Model):
-    SCHOOL_LEVEL_CHOICES = [
+    LEVEL_CHOICES = [
         ('HS', 'High School'),
         ('CO', 'College'),
     ]
 
     name = models.CharField(max_length=100)
-    school_level = models.CharField(max_length=20, choices=SCHOOL_LEVEL_CHOICES)
+    level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     location = models.CharField(max_length=100)
     description = models.TextField()
 
