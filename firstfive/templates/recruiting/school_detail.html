@@ -12,9 +12,13 @@
 {% block content %}
 <main>
     <section id="school-section">
-        <h1>{{ school.name }}, {{ school.location }}</h1>
-        <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
-        <p>{{ school.description }}</p>
+        <h1 class="school-title">{{ school.name }}</h1>
+        <div class="school-info">
+            <p>{{ school.location }}</p>
+            <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
+        </div>
+        <p class="school-description">{{ school.description }}</p>
+        <a class="apply-button" href="{% url 'recruiting:apply' %}">Apply Now</a>
     </section>
 </main>
 {% endblock %}
