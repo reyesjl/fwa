@@ -3,7 +3,8 @@
 }
 
 .school-info {
-    color: navy;
+    color: gray;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
 }
