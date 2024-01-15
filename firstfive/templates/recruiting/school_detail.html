@@ -22,50 +22,78 @@
         <p class="school-description">{{ school.description }}</p>
         <a class="apply-button" href="{% url 'recruiting:apply' %}">Apply Now</a>
     </section>
-    <section class="education-section">
-        <div class="main">
-            <p class="foreword">Academic Excellence</p>
-            <h1 class="title">Elevate Your Learning Experience at a Premier Academic Institution</h1>
-            <p class="subtitle">Explore the Academic Brilliance of this Select School Featured on First Five Rugby. Discover Why These Institutions Stand Out as Pinnacle Hubs of Knowledge and Achievement.</p>
-        </div>
-        <div class="secondary">
-            <div class="image-wrapper">
-                <img src="{% static 'media/recruiting/school-generic.png' %}" alt="photograph of schooling in session"/>
-            </div>
-            <div class="accordion-wrapper">
-                <button class="accordion">Top Programs</button>
-                <div class="panel">
-                    <p>School is known for the following programs.</p>
-                    <ul class="program-list">
-                        {% for program in top_programs %}
-                            <li>{{ program }}</li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <button class="accordion">Nationally Ranked</button>
-                <div class="panel">
-                    <p>School is ranked {{ school.national_rank }} in the nation.</p>
-                </div>
 
-                <button class="accordion">Student Body</button>
-                <div class="panel">
-                    <p>School has {{ school.student_body}} student.</p>
-                </div>
+    <div class="section-wrapper">
+        <div class="fixed-column">
 
-                <button class="accordion">Attendance Costs</button>
-                <div class="panel">
-                    <p>The cost to attend is ${{school.attendance_cost}}</p>
-                </div>
-            </div>
         </div>
-    </section>
-    
-<section class="rugby-section">
-    <div class="main">
-        <p class="foreword">Rugby Excellence</p>
-        <h1 class="title">Experience Top-Tier Rugby Programs and Coaching</h1>
-        <p class="subtitle">Immerse Yourself in the Thriving Rugby Culture at This Institution. Unleash Your Potential with Outstanding Coaching and Unforgettable Sporting Moments.</p>
+        <div class="section-content">
+            <section class="education-section">
+                <div class="main">
+                    <p class="foreword">Academic Excellence</p>
+                    <h1 class="title">Elevate Your Learning Experience at a Premier Academic Institution</h1>
+                    <p class="subtitle">Explore the Academic Brilliance of this Select School Featured on First Five Rugby. Discover Why These Institutions Stand Out as Pinnacle Hubs of Knowledge and Achievement.</p>
+                </div>
+                <div class="secondary">
+                    <div class="image-wrapper">
+                        <img src="{% static 'media/recruiting/generic-school.jpg' %}" alt="photograph of schooling in session"/>
+                    </div>
+                    <div class="accordion-wrapper">
+                        <button class="accordion">Top Programs</button>
+                        <div class="panel">
+                            <p>School is known for the following programs.</p>
+                            <ul class="program-list">
+                                {% for program in top_programs %}
+                                    <li>{{ program }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <button class="accordion">Nationally Ranked</button>
+                        <div class="panel">
+                            <p>School is ranked {{ school.national_rank }} in the nation.</p>
+                        </div>
+
+                        <button class="accordion">Student Body</button>
+                        <div class="panel">
+                            <p>School has {{ school.student_body}} student.</p>
+                        </div>
+
+                        <button class="accordion">Attendance Costs</button>
+                        <div class="panel">
+                            <p>The cost to attend is ${{school.attendance_cost}}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="rugby-section">
+                <div class="main">
+                    <p class="foreword">Rugby Excellence</p>
+                    <h1 class="title">Experience Top-Tier Rugby Programs and Coaching</h1>
+                    <p class="subtitle">Immerse Yourself in the Thriving Rugby Culture at This Institution. Unleash Your Potential with Outstanding Coaching and Unforgettable Sporting Moments.</p>
+                </div>
+                <div class="secondary">
+                    <div class="image-wrapper flip">
+                        <img src="{% static 'media/recruiting/generic-rugby.jpg' %}" alt="photograph of on going rugby match in the mud"/>
+                    </div>
+                    <div class="accordion-wrapper">
+                        <button class="accordion">Our Rugby</button>
+                        <div class="panel">
+                            <p>{{ school.rugby_description }}</p>
+                        </div>
+
+                        <button class="accordion">Our Staff</button>
+                        <div class="panel">
+                            <p>Head Coach: {{ school.rugby_coach }}</p>
+                        </div>
+
+                        <button class="accordion">Nationally Ranked</button>
+                        <div class="panel">
+                            <p>The school is ranked number {{ school.rugby_rank}} in the nation.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-</section>
 </main>
 {% endblock %}

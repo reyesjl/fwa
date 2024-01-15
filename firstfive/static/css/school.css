@@ -42,6 +42,22 @@ img {
     width: 100%;
 }
 
+.section-wrapper {
+    display: flex;
+    gap: 1rem;
+    height: 100%;
+}
+
+.fixed-column {
+    width: 25px;
+    background-color: darkred; 
+    z-index: 1; 
+}
+
+.content-section {
+    flex: 1;
+}
+
 .apply-button {
     display: block;
     width: 50%;
