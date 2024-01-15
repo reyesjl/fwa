@@ -30,8 +30,6 @@ class School(models.Model):
 
     name = models.CharField(max_length=100)
     color = models.CharField(max_length=50, default='#8b0000')
-    school_image = models.ImageField(upload_to='school_images/', default='school_images/generic-school.jpg')
-    rugby_image = models.ImageField(upload_to='school_images/', default='school_images/generic-rugby.jpg')
     school_level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     location = models.CharField(max_length=100)
     description = models.TextField()
@@ -45,5 +43,33 @@ class School(models.Model):
     rugby_coach= models.CharField(default='', max_length=50, null=True)
     rugby_video_link = models.CharField(default='',max_length=100, null=True)
 
+    def get_rugby_image(self):
+        try:
+            return self.rugbyimage_set.first().image.url
+        except AttributeError:
+            return None
+
+    def get_school_image(self):
+        try:
+            return self.schoolimage_set.first().image.url
+        except AttributeError:
+            return None
+
     def __str__(self):
         return f"{self.name} - {self.location}"
+
+class RugbyImage(models.Model):
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='rugby_images/')
+    caption = models.CharField(blank=True, null=True, max_length=200)
+
+    def __str__(self):
+        return f"Rugby Image for {self.school.name}"
+    
+class SchoolImage(models.Model):
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='school_images/')
+    caption = models.CharField(blank=True, null=True, max_length=200)
+
+    def __str__(self):
+        return f"School Image for {self.school.name}"

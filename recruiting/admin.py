@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import PlayerEntry, School
+from .models import PlayerEntry, School, RugbyImage, SchoolImage
 
 class PlayerEntryAdmin(admin.ModelAdmin):
     list_display = ('name', 'country_of_residence', 'status')
@@ -8,4 +8,6 @@ class PlayerEntryAdmin(admin.ModelAdmin):
 
 admin.site.register(PlayerEntry, PlayerEntryAdmin)
 admin.site.register(School)
+admin.site.register(SchoolImage)
+admin.site.register(RugbyImage)
 
