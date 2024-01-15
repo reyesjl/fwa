@@ -30,8 +30,8 @@ class School(models.Model):
 
     name = models.CharField(max_length=100)
     color = models.CharField(max_length=50, default='#8b0000')
-    school_image = models.ImageField(upload_to='school_images/', default='recruiting/generic-school.jpg')
-    rugby_image = models.ImageField(upload_to='school_images/', default='recruiting/generic-rugby.jpg')
+    school_image = models.ImageField(upload_to='school_images/', default='school_images/generic-school.jpg')
+    rugby_image = models.ImageField(upload_to='school_images/', default='school_images/generic-rugby.jpg')
     school_level = models.CharField(max_length=20, choices=LEVEL_CHOICES)
     location = models.CharField(max_length=100)
     description = models.TextField()
