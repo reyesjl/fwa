@@ -36,7 +36,7 @@
                 </div>
                 <div class="secondary">
                     <div class="image-wrapper">
-                        <img src="{% static 'media/recruiting/generic-school.jpg' %}" alt="photograph of schooling in session"/>
+                        <img src="{{ school.school_image }}" alt="photograph of schooling in session"/>
                     </div>
                     <div class="accordion-wrapper">
                         <button class="accordion">Top Programs</button>
@@ -73,7 +73,7 @@
                 </div>
                 <div class="secondary">
                     <div class="image-wrapper flip">
-                        <img src="{% static 'media/recruiting/generic-rugby.jpg' %}" alt="photograph of on going rugby match in the mud"/>
+                        <img src="{{ school.rugby_image }}" alt="photograph of on going rugby match in the mud"/>
                     </div>
                     <div class="accordion-wrapper">
                         <button class="accordion">Our Rugby</button>
