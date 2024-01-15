@@ -19,6 +19,7 @@
 
 #submit-button {
     padding: 15px 50px;
+    font-size: 1.2rem;
     background-color: darkred;
     text-decoration: none;
     color: whitesmoke;
