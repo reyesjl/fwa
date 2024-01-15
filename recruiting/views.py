@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import School
 from .forms import PlayerEntryForm
 
@@ -17,6 +17,10 @@ def player_entry_view(request):
         form = PlayerEntryForm()
     
     return render(request, 'recruiting/player_entry_view.html', {'form': form})
+
+def school_detail(request, school_id):
+    school = get_object_or_404(School, pk=school_id)
+    return render(request, 'recruiting/school_detail.html', {'school':school})
 
 def success(request):
     return render(request, 'recruiting/success.html')
