@@ -38,14 +38,7 @@
 
         <div class="school-list">
             {% for school in schools %}
-            <details class="school">
-                <summary>
-                    {{ school.name }}, {{ school.location }}
-                </summary>
-                
-                <p>{% if school.school_level == 'HS' %}High School{% elif school.school_level == 'CO' %}College{% endif %}</p>
-                <p>{{ school.description }}</p>
-            </details>
+            <a class="school" href="{% url 'recruiting:school_detail' school.id %}">{{ school.name }}, {{ school.location }}</a>
             {% endfor %}
         </div>
     </section>
