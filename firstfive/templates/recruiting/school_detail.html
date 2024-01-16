@@ -9,6 +9,16 @@
 <link rel="stylesheet" href="{% static 'css/school.css' %}">
 <link rel="stylesheet" href="{% static 'css/accordion.css' %}">
 <script src="{% static 'js/accordion.js' %}"></script>
+
+<style>
+    .fixed-column {
+        background-color: {{ school.color }};
+    }
+
+    .active, .accordion:hover {
+        background-color: {{ school.color }};
+    }
+</style>
 {% endblock %}
 
 {% block content %}

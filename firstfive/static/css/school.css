@@ -50,7 +50,6 @@ img {
 
 .fixed-column {
     width: 25px;
-    background-color: darkred; 
     z-index: 1; 
 }
 
