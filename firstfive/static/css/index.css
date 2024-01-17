@@ -73,6 +73,10 @@
     gap: 1rem;
 }
 
+.stat {
+    font-size: 1.2em;
+}
+
 .stat-number {
     font-size: 5em;
     font-weight: bold;
@@ -85,6 +89,26 @@
 .statement {
     font-weight: normal;
     font-size: 3em;
+}
+
+.action-button-wrapper {
+    float: inline-end;
+}
+
+.action-button {
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+    background-color: darkred;
+    display: block;
+    text-align: center;
+}
+
+@media screen and (max-width: 1080px) {
+    .stat {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -104,9 +128,14 @@
 
     .stats {
         width: 100%;
+        justify-content: space-between;
     }
 
     .stats-statement {
+        width: 100%;
+    }
+
+    .action-button-wrapper {
         width: 100%;
     }
 }
