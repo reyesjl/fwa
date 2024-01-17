@@ -8,64 +8,35 @@
     <meta name="description" content="Discover First Five Rugby - your gateway to the North American rugby community. Explore resources, news, and insights into the world of rugby. Join us and fuel your passion for the sport.">
     
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
-    <script src="{% static 'js/carousel.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<main>
-    <!-- Carousel Section -->
-    <section id="carousel-section">
-        <div class="carousel">
-            <img src="{% static 'media/carousel/slide1.jpg' %}" alt="Image 1">
-            <img src="{% static 'media/carousel/slide2.jpg' %}" alt="Image 2">
-            <img src="{% static 'media/carousel/slide3.jpg' %}" alt="Image 3">
-            <img src="{% static 'media/carousel/slide4.jpg' %}" alt="Image 4">
-            <img src="{% static 'media/carousel/slide5.jpg' %}" alt="Image 5">
-            <img src="{% static 'media/carousel/slide6.jpg' %}" alt="Image 6">
-            <img src="{% static 'media/carousel/slide7.jpg' %}" alt="Image 7">
-            <img src="{% static 'media/carousel/slide8.jpg' %}" alt="Image 8">
-            <img src="{% static 'media/carousel/slide9.jpg' %}" alt="Image 9">
-            <img src="{% static 'media/carousel/slide10.jpg' %}" alt="Image 10">
-            <img src="{% static 'media/carousel/slide11.jpg' %}" alt="Image 11">
-            <!-- Add more images as needed -->
+<section class="jumbotron" style="background-image: url('{% static 'media/index/background.jpg' %}')">
+    <div class="title-container">
+        <h1 id="review" class="title">Explore Rugby.</h1>
+        <p class="subtitle">The Ultimate Rugby Platform for All Your Needs.</p>
+    </div>
+    <div class="action-container">
+        <a class="action-link" href="{% url 'recruiting:home' %}"><span>&#9737;</span> Play & Study Abroad <span>&#8599;</span></a>
+        <a class="action-link" href="{% url 'f5index:services' %}"><span>&#9737;</span> Ireland Team Tours <span>&#8599;</span></a>
+        <a class="action-link" href="{% url 'f5index:about' %}"><span>&#9737;</span> Create Team 501(c)(3)</a>
+        <a class="action-link" href="{% url 'f5index:services' %}"><span>&#9737;</span> Training & Diet Plans</a>
+    </div>
+</section>
+<section class="review-highlight">
+    <div class="container-lg">
+        <h1 class="highlight-title">Travel to a new country</h1>
 
-            <!-- Title and Tagline Container -->
-            <div class="carousel-title">
-                <h1>First Five Rugby</h1>
-                <p><em>At the heart of North American rugby</em></p>
+        <div class="stats-wrapper">
+            <div class="stats">
+                <p><span class="stat-number">25</span> years of experience.</p>
+                <p><span class="stat-number">04</span> countries to choose.</p>
             </div>
-
-            <!-- Carousel Controls -->
-            <button id="prev-button"><</button>
-            <button id="next-button">></button>
+            <div class="stats-statement">
+                <h1 class="statement">Do you have what it takes to study and play abroad? Book a call with us today.</h1>
+            </div>
         </div>
-        <div class="sidebar">
-            <h2>Our Services</h2>
-            <ul>
-                <li><a href="{% url 'f5index:services' %}">Player Recruiting</a></li>
-                <li><a href="{% url 'f5index:services' %}">Team Solutions</a></li>
-                <li><a href="{% url 'f5index:services' %}">Custom Canterbury Kit</a></li>
-                <li><a href="{% url 'f5index:services' %}">Player Programs</a></li>
-            </ul>
+    </div>
+</section>
 
-            <h2>Selling Now</h2>
-            <ul>
-                {% for product in products %}
-                    <li><a href="{% url 'product:product_detail' product.id %}">{{ product.name }}</a></li>
-                {% endfor %}
-            </ul>
-            
-            <h2>Recent News</h2>
-            <ul>
-                <li><a href="#">2024 Women's Rugby Milestones</a></li>
-                <li><a href="#">MLR 2024: New Single-Table Format</a></li>
-                <li><a href="#">Growth Trajectory of MLS/MLR</a></li>
-                <li><a href="#">Giteau's MLR Comeback</a></li>
-                <li><a href="#">Eddie Jones in Japan</a></li>
-                <!-- Add more blog titles as needed -->
-            </ul>            
-        </div>
-    </section>
-</main>
 {% endblock %}

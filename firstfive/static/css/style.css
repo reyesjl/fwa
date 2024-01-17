@@ -1,10 +1,32 @@
+/* Main styles */
 body {
     margin: 0;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 
-p {
-    line-height: 1.4;
+/* Navigation bar */
+.navigation-bar {
+    padding: 20px;
+    position: fixed;
+    z-index: 99;
+}
+
+.navigation-link {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.navigation-link:hover {
+    color: gray;
+}
+
+.logo-wrapper img {
+    width: 100px; 
+    height: auto; 
 }
 
 /* width */
@@ -27,140 +49,4 @@ p {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-}
-
-main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-section {
-    margin-bottom: 50px;
-}
-
-.navigation-strip {
-    height: 4px;
-    background-color: darkred;
-}
-
-.navigation-bar {
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    padding: 10px 40px;
-}
-
-.navigation-link {
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    margin-right: 10px;
-}
-
-.navigation-link:hover {
-    color: rgb(88, 88, 88);
-}
-
-#logo-link {
-    font-size: 30px;
-    margin-right: 20px;
-    font-weight: bold;
-}
-
-/* Fixed Navigation */
-.navigation-strip {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100; /* Ensure it's above other content */
-}
-
-.navigation-bar {
-    position: fixed;
-    width: 100%;
-    top: 4px; /* Adjust this based on the actual height of the navigation-strip */
-    z-index: 100; /* Ensure it's above other content */
-}
-
-/* Adjusting Body Padding */
-body {
-    padding-top: 54px; /* Adjust this value based on the total height of the navigation strip and navigation bar */
-}
-
-/* General form styling */
-form {
-    max-width: 1000px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-/* Input styling */
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="number"],
-form select,
-form textarea {
-    box-sizing: border-box;
-    font-family: inherit;
-    font-size: 14px;
-    vertical-align: baseline;
-    font-weight: 400;
-    line-height: 1.29;
-    letter-spacing: .16px;
-    border-radius: 0;
-    outline: 2px solid transparent;
-    outline-offset: -2px;
-    width: 100%;
-    height: 40px;
-    border: none;
-    border-bottom: 1px solid #8d8d8d;
-    background-color: #f4f4f4;
-    padding: 0 16px;
-    color: #161616;
-    transition: background-color 70ms cubic-bezier(.2, 0, .38, .9), outline 70ms cubic-bezier(.2, 0, .38, .9);
-}
-
-/* Input focus styling */
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
-form select:focus,
-form textarea:focus {
-    outline: 2px solid #0f62fe;
-    outline-offset: -2px;
-}
-
-/* Label styling */
-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 8px;
-}
-
-/* Textarea styling */
-form textarea {
-    height: auto; /* Allow textarea to expand based on content */
-    padding-top: 10px;
-}
-
-/* Dropdown styling */
-form select {
-    appearance: none;
-    /* background: url("path/to/arrow-icon.png") no-repeat right center / 15px; */
-    /* Adjust the background image URL and size based on your preference */
-}
-
-/* Remove default styles for dropdown arrow in some browsers */
-form select::-ms-expand {
-    display: none;
-}
-
-
-@media only screen and (max-width: 769px) {
-    .navigation-bar {
-        padding: 10px 10px;
-    }
 }

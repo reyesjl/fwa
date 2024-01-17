@@ -13,11 +13,11 @@
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <div class="navigation-strip"></div>
     <nav class="navigation-bar">
-        <a id="logo-link" class="navigation-link" href="{% url 'f5index:home' %}">F5R</a>
-
-        <a class="navigation-link" aria-current="home" href="{% url 'f5index:home' %}">Home</a>
+        <div class="logo-wrapper">
+            <a href="{% url 'f5index:home' %}"><img src="{% static 'media/index/firstfive-logo.png' %}" /></a>
+        </div>
+        <a class="navigation-link" href="{% url 'f5index:home' %}">Home</a>
         <a class="navigation-link" href="{% url 'f5index:about' %}">About</a>
         <a class="navigation-link" href="{% url 'product:store' %}">Store</a>
         <a class="navigation-link" href="{% url 'f5index:services' %}">Services</a>
