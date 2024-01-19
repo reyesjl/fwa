@@ -34,15 +34,17 @@
 }
 
 .action-link {
-    color: white;
+    color: black;
     font-weight: bold;
+    background-color: white;
+    padding: 10px;
     font-size: 1.2em;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .action-link:hover {
-    color: darkred;
+    color: gray;
     transition: color 0.2s;
 }
 

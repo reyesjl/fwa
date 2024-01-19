@@ -7,6 +7,7 @@
 {% block extra_head %}
     <meta name="description" content="Discover First Five Rugby - your gateway to the North American rugby community. Explore resources, news, and insights into the world of rugby. Join us and fuel your passion for the sport.">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
 {% endblock %}
 
@@ -17,10 +18,10 @@
         <p class="subtitle">The Ultimate Rugby Platform for All Your Needs.</p>
     </div>
     <div class="action-container">
-        <a class="action-link" href="{% url 'recruiting:home' %}"><span>&#9737;</span> Play & Study Abroad <span>&#8599;</span></a>
-        <a class="action-link" href="{% url 'f5index:services' %}"><span>&#9737;</span> Ireland Team Tours <span>&#8599;</span></a>
-        <a class="action-link" href="{% url 'f5index:about' %}"><span>&#9737;</span> Create Team 501(c)(3)</a>
-        <a class="action-link" href="{% url 'f5index:services' %}"><span>&#9737;</span> Training & Diet Plans</a>
+        <a class="action-link" href="{% url 'recruiting:home' %}">Play & Study Abroad <i class="fa-solid fa-arrow-right"></i></span></a>
+        <a class="action-link" href="{% url 'f5index:services' %}">Ireland Team Tours <i class="fa-solid fa-arrow-right"></i></span></a>
+        <a class="action-link" href="{% url 'f5index:about' %}">Create Team 501(c)(3) <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="action-link" href="{% url 'f5index:services' %}">Training & Diet Plans <i class="fa-solid fa-arrow-right"></i></a>
     </div>
 </section>
 <section class="review-highlight">
