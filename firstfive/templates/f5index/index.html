@@ -13,39 +13,99 @@
 
 {% block content %}
 <section class="jumbotron" style="background-image: url('{% static 'media/index/home-bg.jpg' %}')">
-    <div class="title-container">
-        <h1 id="review" class="title">Explore Rugby.</h1>
-        <p class="subtitle">The Ultimate Rugby Platform for All Your Needs.</p>
-    </div>
     <div class="action-container">
-        <a class="action-link" href="{% url 'recruiting:home' %}">Play & Study Abroad <i class="fa-solid fa-arrow-right"></i></span></a>
-        <a class="action-link" href="{% url 'f5index:services' %}">Ireland Team Tours <i class="fa-solid fa-arrow-right"></i></span></a>
-        <a class="action-link" href="{% url 'f5index:about' %}">Create Team 501(c)(3) <i class="fa-solid fa-arrow-right"></i></a>
-        <a class="action-link" href="{% url 'f5index:services' %}">Training & Diet Plans <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="action-list">
+            <a class="action-link" href="{% url 'recruiting:home' %}">
+                <div class="link-wrap">
+                    <div class="text">Play / Study Abroad</div>
+                    <div class="icon"><i class="fa-solid fa-school-flag"></i></div>
+                </div>
+            </a>
+            <a class="action-link" href="{% url 'f5index:services' %}">
+                <div class="link-wrap">
+                    <div class="text">Ireland Team Tours</div>
+                    <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
+                </div>
+            </a>
+            <a class="action-link" href="{% url 'f5index:services' %}">
+                <div class="link-wrap">
+                    <div class="text">Training / Meal Plans</div>
+                    <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
+                </div>
+            </a>
+            <a class="action-link" href="{% url 'f5index:about' %}">
+                <div class="link-wrap">
+                    <div class="text">Team 501 C3 Fund</div>
+                    <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                </div>
+            </a>
+        </div>
+        <div class="scroll-action">
+            <p>Scroll For More</p>
+            <p><i class="fa-solid fa-angle-down"></i></p>
+        </div>
     </div>
 </section>
 <section class="selling-section">
-    <h1>CCC Kit of The Week</h1>
-    <div class="selling-buttons">
-        
-    </div>
-</section>
-<section class="review-highlight">
-    <div class="container-lg">
-        <h1 class="highlight-title">Top UK Schools Welcome American Students</h1>
-
-        <div class="stats-wrapper">
-            <div class="stats">
-                <p class="stat"><span class="stat-number">04</span> countries to choose.</p>
-            </div>
-            <div class="stats-statement">
-                <h1 class="statement">Scholarships available - contact us to learn more.</h1>
-                <div class="action-button-wrapper">
-                    <a class="action-button" href="{% url 'recruiting:apply' %}">Free Consultation</a>
+    <div class="container">
+        <div class="ccc-retro-wrapper">
+            <div class="ccc-wrapper ccc">
+                <h1 class="ccc-title">CCC Kit of The Week</h1>
+                <div class="kits">
+                    <div class="kit">
+                        <div clas="kit-image-wrapper">
+                            <a class="kit-link" href=""><img class="kit-image" src="https://place-hold.it/500x500"/></a>
+                        </div>
+                    </div>
+                    <div class="kit">
+                        <div clas="kit-image-wrapper">
+                            <a class="kit-link" href=""><img class="kit-image" src="https://place-hold.it/500x500"/></a>
+                        </div>
+                    </div>
                 </div>
+                <p class="subtitle">Custom Canterbury jersey designs for your Team</p>
+                <a class="link-button" href="">Get Free Design</a>
+            </div>
+            <div class="ccc-wrapper retro">
+                <h1 class="ccc-title">Retro Jerseys</h1>
+                <div class="kits">
+                    <div class="kit">
+                        <div clas="kit-image-wrapper">
+                            <a class="kit-link" href=""><img class="kit-image" src="https://place-hold.it/500x500"/></a>
+                        </div>
+                    </div>
+                    <div class="kit">
+                        <div clas="kit-image-wrapper">
+                            <a class="kit-link" href=""><img class="kit-image" src="https://place-hold.it/500x500"/></a>
+                        </div>
+                    </div>
+                </div>
+                <p class="subtitle">Buy classic jerseys that have withstood the test of time</p>
+                <a class="link-button" href="">View More</a>
             </div>
         </div>
     </div>
 </section>
-
+<section class="abroad-section" style="background-image: url('{% static 'media/index/abroad-bg.jpg' %}')">
+    <div class="container">
+        <div class="schools-wrapper">
+            <h1 class="schools-title">Top UK Schools Welcome American Students</h1>
+            <p class="subtitle">Create your own pro pathway with an amazing education.</p>
+            <div class="schools-stats">
+                <div class="stat">
+                    <h1 class="number">4</h1>
+                    <p class="label">Unique Countries</p>
+                </div>
+                <div class="stat">
+                    <h1 class="number">8</h1>
+                    <p class="label">Top Schools</p>
+                </div>
+            </div>
+        </div>
+        <div class="schools-action-wrapper">
+            <p class="action-tagline">*Scholarships available upon request.</p>
+            <a class="link-button" href="#">Free Consultation</a>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -3,154 +3,195 @@
     background-size: cover; /* or "contain" depending on your preference */
     background-position: center center;
     background-repeat: no-repeat;
-    position: relative;
 }
 
-.title-container {
-    position: absolute;
-    top: 20%; /* Position the title container at the vertical center of the jumbotron */
-    left: 10%; /* Position the title container at the horizontal center of the jumbotron */
-}
-
-.title {
-    font-size: 4em;
-    color: white;
-    margin: 1rem 0;
-}
-
-.subtitle {
-    font-size: 1em;
-    letter-spacing: .1rem;
-    color: white;
+.container {
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .action-container {
-    position: absolute;
+    padding-top: 120px;
+    width: 90%;
+    margin: 0 auto;
+    height: 85%;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    top: 50%;
-    left: 11%;
+    justify-content: flex-end;
+    gap: 30%;
+}
+
+.action-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .action-link {
+    background: white;
     color: black;
-    font-weight: bold;
-    background-color: white;
-    padding: 10px;
-    font-size: 1.2em;
     text-decoration: none;
-    transition: color 0.2s;
+    padding: 20px;
+    transition: all .3s;
+    width: 20%;
+    margin: 5px;
+    border-radius: 20px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
 }
 
 .action-link:hover {
-    color: gray;
-    transition: color 0.2s;
+    background: black;
+    color: white;
+    transition: all .3s;
 }
 
-
-.review-highlight {
-    padding: 2rem 0;
-}
-
-.container-lg {
-    padding: 0 10%;
-}
-
-.highlight-title {
-    margin: 0;
-    font-size: 3em;
-}
-
-.stats-wrapper {
+.link-wrap {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-}
-
-.stats {
-    display: flex;
-    width: 50%;
     gap: 1rem;
 }
 
-.stat {
-    font-size: 1.2em;
-}
-
-.stat-number {
-    font-size: 5em;
-    font-weight: bold;
-}
-
-.stats-statement {
-    width: 50%;
-}
-
-.statement {
-    font-weight: normal;
-    font-size: 2em;
-}
-
-.action-button-wrapper {
-    float: inline-end;
-}
-
-.action-button {
-    padding: 20px 30px;
+.scroll-action {
+    display: flex;
+    flex-direction: column;
     color: white;
-    text-decoration: none;
-    background-color: darkred;
-    display: block;
-    text-align: center;
+    align-items: center;
     font-size: 1.2em;
 }
 
 .selling-section {
-    padding: 2rem 10%;
+    margin: 50px 0;
 }
 
-.selling-title {
-
+.ccc-retro-wrapper {
+    display: flex;
+    gap: 4rem;
 }
 
-@media screen and (max-width: 1080px) {
+.ccc-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ccc-title {
+    font-weight: normal;
+}
+
+.kits {
+    display: flex;
+    gap: 2rem;
+}
+
+.kit-image {
+    width: 100%;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgb(126, 126, 126);
+}
+
+.link-button {
+    padding: 10px;
+    text-decoration: none;
+    background: darkred;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.abroad-section {
+    margin: 100px 0;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.abroad-section .subtitle {
+    color: white;
+}
+
+.schools-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.schools-title {
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    margin-bottom: 0;
+}
+
+.schools-stats {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding-top: 50px;
+}
+
+.stat {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.number {
+    font-size: 3em;
+    margin: 0;
+}
+
+.schools-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+}
+
+.action-tagline {
+    color: rgba(255, 255, 255, 0.553);
+}
+
+@media only screen and (max-width: 1024px) {
+    .action-link {
+        width: 40%;
+    }
+
+    .ccc-retro-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .schools-stats {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .action-container {
+        width: 80%;
+    }
+
+    .action-link {
+        width: 100%;
+    }
+
+    .schools-stats {
+        width: 80%;
+    }
+
     .stat {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .title-container {
-        transform: translateX(0);
-    }
-
-    .title {
-        font-size: 2.5em;
-    }
-
-    .highlight-title {
-        font-size: 2em;
-    }
-
-    .stats-wrapper {
-        padding-top: 2rem;
-        flex-direction: column;
-        align-items: normal;
-    }
-
-    .stats {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .stats-statement {
-        width: 100%;
-    }
-
-    .action-button-wrapper {
-        width: 100%;
+        align-items: center;
     }
 }
