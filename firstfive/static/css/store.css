@@ -23,11 +23,9 @@
 .product {
     display: flex;
     flex-direction: column;
-    text-align: left;
-    max-width: 20%; /* Adjusted for two products per line */
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
+    justify-content: space-between;
+    max-width: 20%;
+    padding: 2px;
 }
 
 .product-title {
