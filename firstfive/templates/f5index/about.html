@@ -11,52 +11,53 @@
 {% endblock %}
 
 {% block content %}
-    <section class="welcome-section">
-        <div class="container">
-            <h1>Welcome to First Five Rugby</h1>
-            <p><em>For all your rugby needs.</em></p>
-            <p>We are the premier online destination dedicated to fostering and enriching the rugby community. Conceived and crafted with passion by the community, this platform serves as a comprehensive guide and resource hub for enthusiasts, players, coaches, referees, and parents involved in the sport.</p>
+<section class="welcome-section">
+    <div class="container">
+        <h1>Welcome to First Five Rugby</h1>
+        <p><em>For all your rugby needs.</em></p>
+        <p>We are the premier online destination dedicated to fostering and enriching the rugby community. Conceived and crafted with passion by the community, this platform serves as a comprehensive guide and resource hub for enthusiasts, players, coaches, referees, and parents involved in the sport.</p>
 
-            <div class="scroll-action">
-                <p>Scroll For More</p>
-                <p><i class="fa-solid fa-angle-down"></i></p>
-            </div>
+        <div class="scroll-action">
+            <p>Scroll For More</p>
+            <p><i class="fa-solid fa-angle-down"></i></p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="diverse-section">
-        <div class="container">
-            <h2>Comprehensive Rugby Hub</h2>
-            <p>Rugby education, coaching resources, player guidance, and fan updates offered on our platform – from basics to advanced tactics, skill enhancement, development guides, and the latest news.</p>
+<section class="diverse-section">
+    <div class="container">
+        <h2>Comprehensive Rugby Hub</h2>
+        <p>Rugby education, coaching resources, player guidance, and fan updates offered on our platform – from basics to advanced tactics, skill enhancement, development guides, and the latest news.</p>
+    </div>
+    <div class="action-wrapper">
+        <div class="action-link-wrapper">
+            <a class="action-link" target="_blank" href="{% url 'f5index:services' %}"><i class="fa-brands fa-hubspot"></i></a>
+            <p class="subtitle-help">*clickable</p>
         </div>
-        <div class="store-wrapper">
-            <div class="store-link-wrapper">
-                <a class="store-link" target="_blank" href="{% url 'f5index:services' %}"><i class="fa-brands fa-hubspot"></i></a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section class="store-section">
-        <div class="container">
-            <h2>Complete Rugby Apparel</h2>
-            <p>Discover diverse rugby apparel and tailored services at First Five Rugby, ensuring a complete rugby experience.</p>
+<section class="store-section">
+    <div class="container">
+        <h2>Complete Rugby Apparel</h2>
+        <p>Discover diverse rugby apparel and tailored services at First Five Rugby, ensuring a complete rugby experience.</p>
+    </div>
+    <div class="action-wrapper">
+        <div class="action-link-wrapper">
+            <a class="action-link" target="_blank" href="{% url 'product:store' %}"><i class="fa-solid fa-store"></i></a>
         </div>
-        <div class="store-wrapper">
-            <div class="store-link-wrapper">
-                <a class="store-link" target="_blank" href="{% url 'product:store' %}"><i class="fa-solid fa-store"></i></a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 
-    <section class="community-section">
-        <div class="container">
-            <h2>Join Our Growing Community</h2>
-            <p>Pioneer a rugby community beyond a website. Engage, learn, and make a difference at First Five Rugby. Your passion, our home.</p>
+<section class="community-section">
+    <div class="container">
+        <h2>Join Our Growing Community</h2>
+        <p>Pioneer a rugby community beyond a website. Engage, learn, and make a difference at First Five Rugby. Your passion, our home.</p>
+    </div>
+    <div class="action-wrapper">
+        <div class="action-link-wrapper">
+            <a class="action-link" target="_blank" href="https://www.instagram.com/firstfiverugby"><i class="fa-brands fa-instagram"></i></a>
         </div>
-        <div class="social-wrapper">
-            <div class="social-link-wrapper">
-                <a class="social-link" target="_blank" href="https://www.instagram.com/firstfiverugby"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

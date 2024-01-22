@@ -26,24 +26,24 @@ section {
     color: black;
 }
 
-.social-link-wrapper {
+.action-link-wrapper {
     padding-top: 50px;
 }
 
-.social-link {
+.action-link {
     color: rgb(111, 111, 111);
     text-decoration: none;
     font-size: 2em;
+    transition: all .3s;
 }
 
-.store-link-wrapper {
-    padding-top: 50px;
+.action-link:hover {
+    color: black;
+    transition: all .3s;
 }
 
-.store-link {
-    color: rgb(111, 111, 111);
-    text-decoration: none;
-    font-size: 2em;
+.subtitle-help {
+    color: gray;
 }
 
 @media only screen and (max-width: 769px) {
