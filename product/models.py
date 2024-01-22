@@ -6,6 +6,13 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.IntegerField()
+    small_stock = models.IntegerField(default=0)
+    medium_stock = models.IntegerField(default=0)
+    large_stock = models.IntegerField(default=0)
+    xlarge_stock = models.IntegerField(default=0)
+    xxlarge_stock = models.IntegerField(default=0)
+    active = models.BooleanField(default=False)
+    featured = models.BooleanField(default=False)
 
     def primary_image_url(self):
         # Assuming a Product has many ProductImages and the first one is the primary

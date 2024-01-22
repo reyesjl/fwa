@@ -1,5 +1,4 @@
 .jumbotron {
-    height: 100vh;
     background-size: cover; /* or "contain" depending on your preference */
     background-position: center center;
     background-repeat: no-repeat;
@@ -11,20 +10,18 @@
 }
 
 .action-container {
-    padding-top: 120px;
-    width: 90%;
     margin: 0 auto;
-    height: 85%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    gap: 30%;
+    justify-content: space-between;
 }
 
 .action-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 30vh;
 }
 
 .action-link {
@@ -107,11 +104,11 @@
 }
 
 .abroad-section {
-    margin: 100px 0;
-    height: 100vh;
+    margin-top: 100px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    padding: 50px 0;
 }
 
 .abroad-section .subtitle {
@@ -122,7 +119,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 4rem;
 }
 
 .schools-title {

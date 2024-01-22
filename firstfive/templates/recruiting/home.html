@@ -10,44 +10,12 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    <section id="recruiting-section">
-        <h1>Player Recruiting</h1>
-        <p><em>Sponsored by Strong Lad Rugby</em></p>
-        {% comment %}
-        <ul>
-            <li>25 years of experience</li>
-            <li>6 Schools to attend</li>
-            <li>4 countries to explore</li>
-            <li>Prep, Highschool, & University years</li>
-        </ul>
-        {% endcomment %}
-    </section>
-    <section id="apply-section">
+    <section id="video-section">
         <div class="frame-window">
             <video class="promo-video" controls autoplay playsinline>
                 <source src="{% static 'media/services/recruiting.mp4' %}" type="video/mp4">
                 St Joseph's rugby festival
             </video>
         </div>
-        <h3 class="section-title">Submit an application today.</h3>
-        <a id="apply-button" href="{% url 'recruiting:apply' %}">Apply Now</a>
     </section>
-    <section id="schools-section">
-        <h2 class="section-title">Our Schools</h2>
-
-        <div class="school-list">
-            {% for school in schools %}
-            <a class="school" href="{% url 'recruiting:school_detail' school.id %}">{{ school.name }}, {{ school.location }}</a>
-            {% endfor %}
-        </div>
-    </section>
-    <section id="contact-section">
-        <h2 class="section-title">Contact Us</h2>
-        <h2 class="service-subtitle">Have any question or just want to chat?</h2>
-        <p>Head of Recruiting: Tim Brown</p>
-        <p>Email: rugbyvarsity@gmail.com</p>
-        <p>Cell: (202) 503-6415</p>
-    </section>
-</main>
 {% endblock %}
