@@ -12,29 +12,32 @@
 {% block content %}
 <!-- Store Section -->
 <section class="store-section">
-    <h1>Store</h1>
-    <p><em>Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</em></p> 
-    <hr />
+    <div class="container">
+        <h1 class="store-title">FIRST FIVE STORE 2024 <span class="item-count">[5]</span></h1>
+        <p class="store-subtitle">Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</p> 
 </section>
 
-<h2>All Products</h2>
-<section id="products-section">
+<section class="products-section">
     <!-- Example of a product loaded dynamically -->
-    {% for product in products %}
-    <div class="product">
-        <h3>{{ product.name }}</h3>
-        <!-- Ensure your model has a method to get the primary image URL -->
-        <a href="{% url 'product:product_detail' product.id %}">
-            <img width="100%" src="{{ product.primary_image_url }}" alt="{{ product.name }}"/>
-        </a>
+    <div class="container">
+        <div class="product-list-wrapper"></div>
+            {% for product in products %}
+            <div class="product">
+                <!-- Ensure your model has a method to get the primary image URL -->
+                <a href="{% url 'product:product_detail' product.id %}">
+                    <img width="100%" src="{{ product.primary_image_url }}" alt="{{ product.name }}"/>
+                </a>
 
-        <div class="product-details">
-            <div class="detail">
-                <h4>Price</h4>
-                <p>${{ product.price }}</p>
+                <div class="product-details">
+                    <div class="detail">
+                        <p class="product-title">{{ product.name }}</p>
+                        <p class="product-category">{{ product.category }}</p>
+                        <p class="product-price">${{ product.price }}</p>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 </section>
 {% endblock %}
