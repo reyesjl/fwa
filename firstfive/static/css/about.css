@@ -20,13 +20,16 @@
 .row-wrapper {
     display: flex;
     justify-content: center;
-    padding-bottom: 40vh;
+    background-color: darkred;
+    color: white;
+    padding: 40vh 0;
 }
 
 .diverse-section, .store-section, .community-section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     width: 30%;
     text-align: center;
 }
@@ -41,13 +44,22 @@
 }
 
 .action-link {
-    color: rgb(111, 111, 111);
+    background: black;
+    padding: 15px 20px;
+    color: white;
     text-decoration: none;
     font-size: 2em;
     transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border-top-right-radius: 2px;
+    border-bottom-left-radius: 2px;
 }
 
 .action-link:hover {
+    background: white;
     color: black;
     transition: all .3s;
 }
@@ -63,6 +75,7 @@
 
     .row-wrapper {
         flex-direction: column;
+        gap: 150px;
     }
 
     .diverse-section, .store-section, .community-section {
