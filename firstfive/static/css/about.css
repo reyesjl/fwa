@@ -21,6 +21,31 @@ section {
     margin: 0 auto;
 }
 
+.scroll-action {
+    padding-top: 50px;
+    color: black;
+}
+
+.social-link-wrapper {
+    padding-top: 50px;
+}
+
+.social-link {
+    color: rgb(111, 111, 111);
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.store-link-wrapper {
+    padding-top: 50px;
+}
+
+.store-link {
+    color: rgb(111, 111, 111);
+    text-decoration: none;
+    font-size: 2em;
+}
+
 @media only screen and (max-width: 769px) {
     .container {
         width: 90%;
