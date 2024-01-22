@@ -62,10 +62,12 @@
     .product-list-wrapper {
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
+        gap: .5rem;
     }
 
     .product {
-        max-width: 40%;
+        max-width: 45%;
     }
 
     .store-subtitle {
