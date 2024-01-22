@@ -58,6 +58,12 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+    .product-list-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .product {
         max-width: 90%; 
     }

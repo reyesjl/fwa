@@ -7,7 +7,7 @@ from .models import Product
 import stripe
 
 def store(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(active=True)
     return render(request, 'product/store.html', {'products': products})
 
 def product_detail(request, product_id):
