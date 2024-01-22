@@ -63,9 +63,9 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .product {
-        max-width: 90%; 
+        max-width: 40%;
     }
 
     .store-subtitle {
