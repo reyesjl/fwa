@@ -1,56 +1,29 @@
-.service-title {
-    font-size: 1.8em;
+.selection-section {
+    padding-top: 150px;
+    background: black;
+    color: white;
+    height: 100vh;
 }
 
-.promo-video {
-    max-width: 100%;
+.container {
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-.service-subtitle {
+.highlight {
     color: gray;
 }
 
-#apply-button {
-    padding: 15px 50px;
-    background-color: darkred;
-    text-decoration: none;
-    color: whitesmoke;
+.roles-container {
+    text-align: center;
 }
 
-#submit-button {
-    padding: 15px 50px;
-    font-size: 1.2rem;
-    background-color: darkred;
-    text-decoration: none;
-    color: whitesmoke;
-    display: inline-block;  /* Ensures block-level behavior with padding */
-    border: none;  /* Removes default button border */
-    cursor: pointer;  /* Changes cursor on hover */
-}
-
-.school {
-    margin-bottom: 10px;
-    width: 30%;
-    border: 1px solid lightslategray;
-    border-radius: 5px;
-    padding: 8px;
+.roles-subtitle {
     color: darkred;
-    text-decoration: none;
-}
-
-.school:hover {
-    background-color: darkred;
-    color: white;
-}
-
-.school-list {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 769px) {
-    .school {
-        width: 100%;
-    }
+
 }
