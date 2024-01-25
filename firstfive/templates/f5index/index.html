@@ -13,75 +13,54 @@
 
 {% block content %}
 <section class="jumbotron" style="background-image: url('{% static 'media/index/home-bg.jpg' %}')">
-    <div class="action-container">
-        <div class="action-list">
-            <a class="action-link" href="{% url 'recruiting:home' %}">
-                <div class="link-wrap">
-                    <div class="text">Play / Study Abroad</div>
-                    <div class="icon"><i class="fa-solid fa-school-flag"></i></div>
-                </div>
-            </a>
-            <a class="action-link" href="{% url 'f5index:services' %}">
-                <div class="link-wrap">
-                    <div class="text">Ireland Team Tours</div>
-                    <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
-                </div>
-            </a>
-            <a class="action-link" href="{% url 'f5index:services' %}">
-                <div class="link-wrap">
-                    <div class="text">Training / Meal Plans</div>
-                    <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
-                </div>
-            </a>
-            <a class="action-link" href="{% url 'f5index:about' %}">
-                <div class="link-wrap">
-                    <div class="text">Team 501 C3 Fund</div>
-                    <div class="icon"><i class="fa-solid fa-people-group"></i></div>
-                </div>
-            </a>
-        </div>
-        <div class="scroll-action">
-            <p>Scroll For More</p>
-            <p><i class="fa-solid fa-angle-down"></i></p>
-        </div>
-    </div>
-</section>
-<section class="selling-section">
-    <div class="container">
-        <div class="ccc-retro-wrapper">
-            <div class="ccc-wrapper ccc">
-                <h1 class="ccc-title">CCC Kit of The Week</h1>
-                <div class="kits">
-                    <div class="kit">
-                        <div clas="kit-image-wrapper">
-                            <a class="kit-link" href=""><img class="kit-image" src="{% static 'media/index/rugby_jersey_03.jpg' %}"/></a>
-                        </div>
-                    </div>
-                    <div class="kit">
-                        <div clas="kit-image-wrapper">
-                            <a class="kit-link" href=""><img class="kit-image" src="{% static 'media/index/rugby_jersey_04.jpg' %}"/></a>
-                        </div>
-                    </div>
-                </div>
-                <p class="subtitle">Custom Canterbury jersey designs for your Team</p>
-                <a class="link-button" href="">Get Free Design</a>
+    <div class="jumbo-container">
+        <div class="jersey_container">
+            <div class="jersey_wrapper">
+                <a class="jersey_link" href="#">
+                    <img class="jersey_img" src="{% static 'media/index/custom_link.jpg' %}" />
+                </a>
             </div>
-            <div class="ccc-wrapper retro">
-                <h1 class="ccc-title">Retro Jerseys</h1>
-                <div class="kits">
-                    <div class="kit">
-                        <div clas="kit-image-wrapper">
-                            <a class="kit-link" href=""><img class="kit-image" src="{% static 'media/index/rugby_jersey_01.jpg' %}"/></a>
-                        </div>
+            <div class="jersey_wrapper">
+                <a class="jersey_link" href="#">
+                    <img class="jersey_img" src="{% static 'media/index/deals_link.jpg' %}" />
+                </a>
+            </div>
+            <div class="jersey_wrapper">
+                <a class="jersey_link" href="#">
+                    <img class="jersey_img" src="{% static 'media/index/retros_link.jpg' %}" />
+                </a>
+            </div>
+        </div>
+        <div class="action-container">
+            <div class="action-list">
+                <a class="action-link" href="{% url 'recruiting:home' %}">
+                    <div class="link-wrap">
+                        <div class="text">Play / Study Abroad</div>
+                        <div class="icon"><i class="fa-solid fa-school-flag"></i></div>
                     </div>
-                    <div class="kit">
-                        <div clas="kit-image-wrapper">
-                            <a class="kit-link" href=""><img class="kit-image" src="{% static 'media/index/rugby_jersey_02.jpg' %}"/></a>
-                        </div>
+                </a>
+                <a class="action-link" href="{% url 'f5index:services' %}">
+                    <div class="link-wrap">
+                        <div class="text">Ireland Team Tours</div>
+                        <div class="icon"><i class="fa-solid fa-plane-departure"></i></div>
                     </div>
-                </div>
-                <p class="subtitle">Buy classic jerseys that have withstood the test of time</p>
-                <a class="link-button" href="">View More</a>
+                </a>
+                <a class="action-link" href="{% url 'f5index:services' %}">
+                    <div class="link-wrap">
+                        <div class="text">Training / Meal Plans</div>
+                        <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
+                    </div>
+                </a>
+                <a class="action-link" href="{% url 'f5index:about' %}">
+                    <div class="link-wrap">
+                        <div class="text">Team 501 C3 Fund</div>
+                        <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+                    </div>
+                </a>
+            </div>
+            <div class="scroll-action">
+                <p>Scroll For More</p>
+                <p><i class="fa-solid fa-angle-down"></i></p>
             </div>
         </div>
     </div>
@@ -104,7 +83,7 @@
         </div>
         <div class="schools-action-wrapper">
             <p class="action-tagline">*Scholarships available upon request.</p>
-            <a class="link-button" href="#">Free Consultation</a>
+            <a class="link-button" href="#">Scholarships Available</a>
         </div>
     </div>
 </section>
