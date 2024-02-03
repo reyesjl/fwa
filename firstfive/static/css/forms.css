@@ -66,3 +66,17 @@ form select {
 form select::-ms-expand {
     display: none;
 }
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-button {
+    margin-top: 20px;
+    padding: 10px 40px;
+    background: darkred;
+    color: white;
+    cursor: pointer;
+}

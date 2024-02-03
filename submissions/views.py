@@ -3,8 +3,9 @@ from .forms import RecruitingSubmissionForm
 
 def handle_recruiting_submissions(request):
     title = 'Apply to Study Abroad'
-    form = RecruitingSubmissionForm(request.POST)
+    form = RecruitingSubmissionForm()
     if request.method == 'POST':
+        form = RecruitingSubmissionForm(request.POST)
         if form.is_valid():
             # process any data from the form here
             form.save()
