@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import RecruitingSubmissionForm
+from .forms import RecruitingSubmissionForm, ToursSubmissionForm
 
 def handle_recruiting_submissions(request):
     title = 'Apply to Study Abroad'
@@ -12,6 +12,24 @@ def handle_recruiting_submissions(request):
             return redirect('submissions:success', message='Your recruiting submission was successful')
         else:
             form = RecruitingSubmissionForm()
+
+    context = {
+        'form': form,
+        'title': title,
+    }
+    return render(request, 'submissions/handle_submission_form.html', context)
+
+def handle_tours_submissions(request):
+    title = 'Apply for a Free Tours Quote'
+    form = ToursSubmissionForm()
+    if request.method == 'POST':
+        form = ToursSubmissionForm(request.POST)
+        if form.is_valid():
+            # process any data from the form here
+            form.save()
+            return redirect('submissions:success', message='Your tours quote form has been submitted')
+        else:
+            form = ToursSubmissionForm()
 
     context = {
         'form': form,

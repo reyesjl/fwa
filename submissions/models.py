@@ -17,5 +17,9 @@ class RecruitingSubmission(BaseSubmissionModel):
     age = models.IntegerField(default="12", validators=[MinValueValidator(12),])
     origin_country = models.CharField(max_length=50, default='usa')
     destination_country = models.CharField(choices=COUNTRY_OPTIONS, max_length=50, default='United States')
+
+class ToursSubmission(BaseSubmissionModel):
+    teamname = models.CharField(max_length=100, default='Firstfive RFC')
+    teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
     
     
