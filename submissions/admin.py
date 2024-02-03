@@ -1,3 +1,3 @@
 from django.contrib import admin
+from .models import RecruitingSubmission
 
-# Register your models here.
