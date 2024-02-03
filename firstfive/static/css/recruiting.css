@@ -2,6 +2,10 @@
     padding-top: 150px;
     background: black;
     color: white;
+    background-image: url('/static/media/recruiting/library-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {
@@ -25,11 +29,10 @@
     padding-top: 100px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .role {
-    width: 50%;
+    width: 20%;
     margin-bottom: 100px;
 }
 
@@ -84,8 +87,83 @@
     transition: all .3s;
 }
 
+.apply-button {
+    display: block;
+    width: fit-content;
+    font-size: 1.2rem;
+    margin: 20px auto;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: white;
+    background: darkred;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.info-container {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.info-subtitle {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 0;
+}
+
+.info-title {
+    margin-top: 0;
+    font-size: 5em;
+    color: rgb(32, 32, 32);
+}
+
+.info-summary {
+    color: darkgray;
+    font-size: 1.4em;
+    width: 50%;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1024px) {
+    .info-subtitle {
+        font-size: 1.4em;
+    }
+
+    .info-title {
+        font-size: 2.2em;
+    }
+
+    .info-summary {
+        width: 100%;
+        font-size: 1.3em;
+    }
+}
+
 @media only screen and (max-width: 769px) {
     .country_img {
         width: 80%;
+    }
+
+    .roles-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .role {
+        width: 50%;
+    }
+
+    .info-subtitle {
+        font-size: 1.2em;
+    }
+
+    .info-title {
+        font-size: 2em;
+    }
+
+    .info-summary {
+        width: 100%;
+        font-size: 1.2em;
     }
 }
