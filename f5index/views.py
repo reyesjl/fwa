@@ -14,5 +14,8 @@ def store(request):
 def recruiting(request):
     return render(request, 'f5index/recruiting.html')
 
+def tours(request):
+    return render(request, 'f5index/tours.html')
+
 def services(request):
     return render(request, 'f5index/services.html')

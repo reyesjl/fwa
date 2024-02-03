@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Tours page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+    <meta name="description" content="Learn about First Five Rugby, the dedicated platform for rugby enthusiasts in North America. Read our story, mission, and how we're enriching the rugby community.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/tours.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="tours-section">
+    <div class="container">
+        <div class="ireland-wrapper">
+            <p class="ireland-preface">Dream come true in ireland.  Explore the country - on the pitch and in the pub against known irish clubs. Get a free team quote. 48 hour callbacks.</p>
+            <h1 class="ireland-title">IRELAND</h1>
+        </div>
+    </div>
+</section>
+<section class="partners-section">
+    <div class="container">
+        <h1 class="section-title">Our Partners</h1>
+        <div class="partners-wrapper">
+            <div class="sponsor">
+                <img class="sponsor-img" src="{% static 'media/tours/sponsor-01.png' %}" />
+                <h2 class="sponsor-name">emerald escapes</h2>
+            </div>
+            <div class="sponsor">
+                <img class="sponsor-img" src="{% static 'media/tours/sponsor-02.png' %}" />
+                <h2 class="sponsor-name">globetrotter</h2>
+            </div>
+            <div class="sponsor">
+                <img class="sponsor-img" src="{% static 'media/tours/sponsor-03.png' %}" />
+                <h2 class="sponsor-name">wunderlust</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="action-section">
+    <div class="container">
+        <div class="action-wrapper">
+            <h2 class="action-title">Travel To Ireland.</h2>
+            <h1 class="action-caption">Forget the Rest and Book With Us.</h1>
+            <a class="action-button" href="">Get a Free Quote</a>
+        </div>
+        <div class="preview-wrapper">
+            <div class="preview">
+                <img class="preview-img" src="{% static 'media/tours/ireland-01.jpg' %}" />
+                <p>Visit and stay overnight in cities like Galway, Clifden, Cork, Kilkenny, Kerry, Dublin. Breakfast included.</p>
+            </div>
+            <div class="preview">
+                <img class="preview-img" src="{% static 'media/tours/ireland-02.jpg' %}" />
+                <p>Watch pro matches and get exclusive behind the scenes tour. Fixtures have included Shannon, Muster, Connacht, Rockwell..</p>
+            </div>
+            <div class="preview">
+                <img class="preview-img" src="{% static 'media/tours/ireland-03.jpg' %}" />
+                <p>Explore historic ireland locations, guided by our trusted bus drivers that know the area best.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

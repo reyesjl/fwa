@@ -1,0 +1,137 @@
+.tours-section {
+    padding-top: 150px;
+    background-image: url('/static/media/tours/ireland-bg.jpg');
+    background-size: cover; /* or "contain" depending on your preference */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.ireland-wrapper{
+    font-size: .9rem;
+    padding-top: 20vh;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+}
+
+.ireland-preface {
+    width: 325px;
+    text-align: right;
+    margin-left: auto;
+    text-transform: uppercase;
+}
+
+.ireland-title {
+    font-size: 5em;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: .25rem;
+}
+
+.partners-section {
+    padding: 50px 0;
+    padding-bottom: 70px;
+}
+
+.partners-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin:0 auto;
+}
+
+.sponsor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsor-name {
+    text-align: center;
+    color: #a6a6a6;
+}
+
+.sponsor-img {
+    width: 50%;
+}
+
+.action-section {
+    padding: 100px 0;
+    background: black;
+    color: white;
+}
+
+.action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.action-title {
+    text-align: center;
+    font-size: .9rem;
+}
+
+.action-caption {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.action-button {
+    padding: 10px;
+    background: darkred;
+    color: white;
+    border-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    text-decoration: none;
+}
+
+.preview-wrapper {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.preview {
+    padding: 20px;
+}
+
+.preview-img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 769px) {
+    .ireland-wrapper {
+        width: auto;
+    }
+
+    .partners-wrapper {
+        width: 100%;
+    }
+
+    .sponsor-img {
+        width: 80%;
+    }
+
+    .sponsor-name {
+        font-size: .8rem;
+    }
+
+    .action-title {
+        font-size: .9rem;
+    }
+
+    .preview-wrapper {
+        flex-direction: column;
+    }
+}
