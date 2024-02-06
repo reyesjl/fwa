@@ -1,46 +1,102 @@
-.service-title {
-    font-size: 1.8em;
+.banner {
+    padding-top: 150px;
+    background-image: url('/static/media/services/services-bg.jpg');
+    background-size: cover;
+    background-position: right bottom;
+    background-repeat: no-repeat;
 }
 
-.service-title a {
-    color: darkred;
-    text-decoration: none;
-}
-
-.service-title a:hover {
-    text-decoration: underline;
-}
-
-.button-action  {
-	padding: 4px 6px;
-	background-color: darkred;
-	color: white;
-	margin-right: 5px;
-	text-decoration: none;
-}
-
-.info-action {
-	color: darkred;
-}
-	
-
-.service-subtitle {
-    color: gray;
-}
-
-p.service-subtitle {
-    color: darkslategray;
-}
-
-.service-frame {
-    padding: 20px 0;
-}
-
-.frame-window {
+.container {
     max-width: 90%;
     margin: 0 auto;
 }
 
-.frame-window video {
+.banner-section {
+
+}
+
+.title-wrapper {
+    color: white;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+
+.banner-title {
+    font-weight: normal;
+    display: flex;
+    margin: 0; 
+    font-size: 5em;
+}
+
+.banner-subtitle {
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.statement-wrapper {
+    padding: 50px 0;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.statement-title {
+    font-weight: bold;
+}
+
+.statement {
+    color: gray;
+    font-size: 1.4rem;
+}
+
+.services-container {
     width: 100%;
+    background: darkred;
+}
+
+.services-wrapper {
+    padding: 50px 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+}
+
+.service {
+    padding: 20px;
+    background: white;
+    color: black;
+    width: 25%;
+}
+
+.service-title {
+    padding: 5px;
+    background: darkred;
+    color: white;
+    width: fit-content;
+}
+
+.service-link {
+    display: block;
+    text-align: right;
+    margin-top: 50px;
+    color: black;
+}
+
+@media only screen and (max-width: 769px) {
+    .statement {
+        font-size: 1.2rem;
+    }
+
+    .statement-wrapper {
+        width: 100%;
+    }
+
+    .service {
+        width: 100%;
+    }
 }

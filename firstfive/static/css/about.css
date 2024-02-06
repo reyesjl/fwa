@@ -7,6 +7,16 @@
     text-align: center;
 }
 
+.welcome-title {
+    font-weight: bold;
+}
+
+.welcome-statement {
+    font-size: 1.2rem;
+    color: darkgray;
+    font-weight: bold;
+}
+
 .container {
     width: 50%;
     margin: 0 auto;

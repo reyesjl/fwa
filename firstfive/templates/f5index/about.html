@@ -13,12 +13,13 @@
 {% block content %}
 <section class="welcome-section">
     <div class="container">
-        <h1>Welcome to First Five Rugby</h1>
-        <p><em>For all your rugby needs.</em></p>
-        <p>We are the premier online destination dedicated to fostering and enriching the rugby community. Conceived and crafted with passion by the community, this platform serves as a comprehensive guide and resource hub for enthusiasts, players, coaches, referees, and parents involved in the sport.</p>
+        <div class="welcome-wrapper">
+            <p class="welcome-title">Welcome to First Five Rugby</p>
+            <p class="welcome-statement">We are the premier online destination dedicated to fostering and enriching the rugby community. Conceived and crafted with passion by the community, this platform serves as a comprehensive guide and resource hub for enthusiasts, players, coaches, referees, and parents involved in the sport.</p>
+        </div>
 
         <div class="scroll-action">
-            <p>See Links Below</p>
+            <p>For all your rugby needs.</p>
             <p><i class="fa-solid fa-angle-down"></i></p>
         </div>
     </div>
@@ -33,7 +34,7 @@
         </div>
         <div class="action-wrapper">
             <div class="action-link-wrapper">
-                <a class="action-link" target="_blank" href="{% url 'f5index:services' %}"><i class="fa-brands fa-hubspot"></i></a>
+                <a class="action-link" href="{% url 'f5index:services' %}"><i class="fa-brands fa-hubspot"></i></a>
             </div>
         </div>
     </section>
@@ -46,7 +47,7 @@
         </div>
         <div class="action-wrapper">
             <div class="action-link-wrapper">
-                <a class="action-link" target="_blank" href="{% url 'product:store' %}"><i class="fa-solid fa-store"></i></a>
+                <a class="action-link" href="{% url 'product:store' %}"><i class="fa-solid fa-store"></i></a>
             </div>
         </div>
     </section>
