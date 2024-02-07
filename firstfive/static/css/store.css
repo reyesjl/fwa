@@ -15,6 +15,10 @@
     width: 70%;
 }
 
+.product-wrapper {
+    color: gray;
+}
+
 .product-list-wrapper {
     display: flex;
     flex-wrap: wrap;
