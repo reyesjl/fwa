@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'f5index',
+    'store',
     'product',
     'submissions',
 ]

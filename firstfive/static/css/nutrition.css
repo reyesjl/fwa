@@ -1,6 +1,6 @@
 .banner {
     padding-top: 150px;
-    background-image: url('/static/media/services/services-bg.jpg');
+    background-image: url('/static/media/nutrition/nutrition-bg.jpg');
     background-size: cover;
     background-position: right bottom;
     background-repeat: no-repeat;
@@ -31,6 +31,8 @@
 }
 
 .banner-subtitle {
+    font-size: 1.1em;
+    text-transform: uppercase;
 }
 
 .statement-wrapper {
@@ -47,42 +49,6 @@
 .statement {
     color: gray;
     font-size: 1.4rem;
-}
-
-.services-container {
-    width: 100%;
-    background: darkred;
-}
-
-.services-wrapper {
-    padding: 50px 0;
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    justify-content: center;
-}
-
-.service {
-    padding: 20px;
-    background: white;
-    color: black;
-    width: 25%;
-}
-
-.service-title {
-    padding: 5px;
-    background: darkred;
-    color: white;
-    width: fit-content;
-}
-
-.service-link {
-    display: block;
-    text-align: right;
-    margin-top: 50px;
-    color: black;
 }
 
 @media only screen and (max-width: 769px) {

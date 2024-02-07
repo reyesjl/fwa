@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Training page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+    <meta name="description" content="We offer free training plans and paid services from experts in strength and conditioning.">
+    <link rel="stylesheet" href="{% static 'css/training.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="banner" >
+    <div class="container">
+        <div class="banner-section">
+            <div class="title-wrapper">
+                <h1 class="banner-title">Strength & Conditioning</h1>
+                <p class="banner-subtitle"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="statement-section">
+    <div class="container">
+        <div class="statement-wrapper">
+            <p class="statement-title">Body</p>
+            <h2 class="statement">
+                Strength and conditioning are essential for rugby players, influencing performance and injury prevention. We'll soon offer free training plans and one-on-one sessions with experts to help players optimize their training and excel on the field.
+            </h2>
+        </div>
+    </div>
+</section>
+{% endblock %}

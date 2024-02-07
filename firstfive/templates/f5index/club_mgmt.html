@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Club Mgmt Page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+    <meta name="description" content="We offer services for clubs, including creating a 501c3, recruiting plans, and social media management.">
+    <link rel="stylesheet" href="{% static 'css/club-mgmt.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="banner" >
+    <div class="container">
+        <div class="banner-section">
+            <div class="title-wrapper">
+                <h1 class="banner-title">Club Management</h1>
+                <p class="banner-subtitle"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="statement-section">
+    <div class="container">
+        <div class="statement-wrapper">
+            <p class="statement-title">Manage</p>
+            <h2 class="statement">
+                Effective club management is vital for player success and club longevity. We provide services such as creating a 501c3 fund, managing social media, and recruiting to support clubs in achieving their goals both on and off the field.
+            </h2>
+        </div>
+    </div>
+</section>
+{% endblock %}

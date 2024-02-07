@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Nutrition page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+    <meta name="description" content="We offer free nutrition plans and paid services from experts in rugby and performance nutrition.">
+    <link rel="stylesheet" href="{% static 'css/nutrition.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="banner" >
+    <div class="container">
+        <div class="banner-section">
+            <div class="title-wrapper">
+                <h1 class="banner-title">Nutrition</h1>
+                <p class="banner-subtitle"></p>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="statement-section">
+    <div class="container">
+        <div class="statement-wrapper">
+            <p class="statement-title">Food</p>
+            <h2 class="statement">Food is a cornerstone of sports performance, but it's a challenge to get it right. Yet, the rewards are immense, impacting endurance, strength, and well-being. We offer free nutritional guides for athletes, recognizing their unique needs. Soon, we'll provide one-on-one meetings with experts for personalized advice and meal plans, ensuring each athlete reaches their full potential.</h2>
+        </div>
+    </div>
+</section>
+{% endblock %}

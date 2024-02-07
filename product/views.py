@@ -34,7 +34,7 @@ def purchase(request, product_id):
         success_url=request.build_absolute_uri(reverse('product:payment_success')),
         cancel_url=request.build_absolute_uri(product.get_absolute_url()),
         metadata={
-            'product_id': str(product.id),# Convert to string
+            'product_id': str(product.id),
         },
     )
 

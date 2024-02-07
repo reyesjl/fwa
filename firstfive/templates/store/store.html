@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Store page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+<meta name="description" content="Shop at First Five Rugby Store for premium rugby apparel and merchandise. Discover our range of streetwear, vintage jerseys, and exclusive rugby gear.">
+<link rel="stylesheet" href="{% static 'css/store.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Store Section -->
+<section class="store-section">
+    <div class="container">
+        <div class="team-section">
+            <h1 class="store-title">CANTERBURY CUSTOM KIT <span class="item-count">[0]</span></h1>
+            <p class="store-subtitle">Team gear tailored to your club - free mockups available for teams.</p>
+
+            <div class="product-wrapper">
+                
+            </div>
+        </div>
+
+        <div class="daily-section">
+            <h1 class="store-title">FIRST FIVE STORE 2024 <span class="item-count">[0]</span></h1>
+            <p class="store-subtitle">Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</p> 
+        </div>
+
+        <div class="team-section">
+            <h1 class="store-title">RUGBY HONOR CAPS <span class="item-count">[0]</span></h1>
+            <p class="store-subtitle">Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</p>
+        </div>
+    </div>
+</section>
+
+<section class="products-section">
+    <!-- Example of a product loaded dynamically -->
+    <div class="container">
+        <div class="product-list-wrapper">
+           
+        </div>
+    </div>
+</section>
+{% endblock %}
