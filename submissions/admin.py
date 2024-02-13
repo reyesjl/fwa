@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import RecruitingSubmission, ToursSubmission
+from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission
 
 class BaseSubmissionAdmin(admin.ModelAdmin):
     list_display = ['firstname', 'lastname', 'email', 'phone', 'status']
