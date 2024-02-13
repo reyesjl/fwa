@@ -21,5 +21,9 @@ class RecruitingSubmission(BaseSubmissionModel):
 class ToursSubmission(BaseSubmissionModel):
     teamname = models.CharField(max_length=100, default='Firstfive RFC')
     teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
+
+class CanterburyKitSubmission(BaseSubmissionModel):
+    teamname = models.CharField(max_length=100, default='Firstfive RFC')
+    teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
     
     

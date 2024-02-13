@@ -8,12 +8,18 @@ class BaseSubmissionAdmin(admin.ModelAdmin):
 class RecruitingSubmissionAdmin(BaseSubmissionAdmin):
     list_display = BaseSubmissionAdmin.list_display + ['position', 'age', 'origin_country', 'destination_country']
     list_filter = BaseSubmissionAdmin.list_filter + ['position', 'origin_country', 'destination_country']
-    ordering = ['-status', 'lastname']  # Example ordering
+    ordering = ['-status', 'lastname']
 
 class ToursSubmissionAdmin(BaseSubmissionAdmin):
     list_display = BaseSubmissionAdmin.list_display + ['teamname', 'teamsize']
     list_filter = BaseSubmissionAdmin.list_filter + ['teamname']
-    ordering = ['teamname']  # Example ordering
+    ordering = ['teamname']
+
+class CanterburyKitSubmissionAdmin(BaseSubmissionAdmin):
+    list_display = BaseSubmissionAdmin.list_display + ['teamname', 'teamsize']
+    list_filter = BaseSubmissionAdmin.list_filter + ['teamname']
+    ordering = ['teamname']
 
 admin.site.register(RecruitingSubmission, RecruitingSubmissionAdmin)
 admin.site.register(ToursSubmission, ToursSubmissionAdmin)
+admin.site.register(CanterburyKitSubmission, CanterburyKitSubmissionAdmin)
