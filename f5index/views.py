@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from product.models import Product
 
 def home(request):
-    products = Product.objects.all()
     return render(request, 'f5index/index.html', {'products': products})
 
 def about(request):
