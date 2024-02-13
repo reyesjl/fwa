@@ -23,3 +23,11 @@ class ProductVariant(models.Model):
 
     def __str__(self):
         return f"{self.product.title} - {self.size} ({self.color}, {self.material})"
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='product_images/')
+    is_main = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Image for {self.product.title}"
