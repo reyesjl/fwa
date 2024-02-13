@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'f5index/index.html', {'products': products})
+    return render(request, 'f5index/index.html')
 
 def about(request):
     return render(request, 'f5index/about.html')
