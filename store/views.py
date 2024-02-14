@@ -44,12 +44,12 @@ def product_details(request, product_id):
 
     images = product_with_prefetched_data.images.all()
     context = {
-        'product': product, 
-        'small_exists': small_exists, 
-        'medium_exists': medium_exists, 
-        'large_exists': large_exists, 
-        'variants': variants, 
-        'images': images,
+        "product": product, 
+        "small_exists": small_exists, 
+        "medium_exists": medium_exists, 
+        "large_exists": large_exists, 
+        "variants": variants, 
+        "images": images,
     }
     return render(request, 'store/product_details.html', context)
 
@@ -66,34 +66,36 @@ def purchase(request, product_id):
 
     # Prepare line item for Stripe checkout session
     line_item = {
-        'price_data': {
-            'currency': 'usd',
-            'product_data': {
-                'name': product.title,
+        "price_data": {
+            "currency": "usd",
+            "product_data": {
+                "name": product.title,
             },
-            'unit_amount': int(selected_variant.price * 100),  # Convert price to cents
+            "unit_amount": int(selected_variant.price * 100),  # Convert price to cents
         },
-        'quantity': 1,
+        "quantity": 1,
     }
 
     # Create Stripe checkout session
     checkout_session = stripe.checkout.Session.create(
-        payment_method_types=['card'],
+        payment_method_types=["card"],
         line_items=[line_item],
-        mode='payment',
+        mode="payment",
         success_url=request.build_absolute_uri(reverse('store:payment_success')),
         cancel_url=request.build_absolute_uri(reverse('store:product_details', args=[product.id])),
         metadata={
-            'product_id': str(product.id),  # Include product ID
-            'product_title': product.title,  # Include product title
-            'variant_id': str(selected_variant.id),  # Include variant ID
-            'variant_size': selected_variant.size,  # Include variant size
+            "product_id": str(product.id),  # Include product ID
+            "product_title": product.title,  # Include product title
+            "variant_id": str(selected_variant.id),  # Include variant ID
+            "variant_size": selected_variant.size,  # Include variant size
         },
         payment_intent_data={
-            'product_id': str(product.id),  # Include product ID
-            'product_title': product.title,  # Include product title
-            'variant_id': str(selected_variant.id),  # Include variant ID
-            'variant_size': selected_variant.size,  # Include variant size
+            "metadata": {
+                "product_id": str(product.id),  # Include product ID
+                "product_title": product.title,  # Include product title
+                "variant_id": str(selected_variant.id),  # Include variant ID
+                "variant_size": selected_variant.size,  # Include variant size
+            }
         }
     )
 
