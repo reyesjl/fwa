@@ -51,9 +51,6 @@ def purchase(request, product_id):
             'unit_amount': int(selected_variant.price * 100),  # Convert price to cents
         },
         'quantity': 1,
-        'custom': {
-            'variant_id': str(selected_variant.id),  # Include variant ID as custom data
-        },
     }
 
     # Create Stripe checkout session
@@ -100,12 +97,12 @@ def stripe_webhook_payment_success(request):
     return HttpResponse(status=200)
 
 def handle_payment_success(session):
-    line_items = session['display_items']
-    for item in line_items:
-        product_id = item['custom']['product_id']
-        variant_id = item['custom']['variant_id']
-        quantity = item['quantity']
-        if product_id and variant_id:
-            product_variant = ProductVariant.objects.get(id=variant_id)
-            product_variant.stock_quantity -= quantity
-            product_variant.save()
+    metadata = session.get('metadata', {})
+    product_id = metadata.get('product_id')
+    variant_id = metadata.get('variant_id')
+    quantity = 1
+
+    if product_id and variant_id:
+        product_variant = ProductVariant.objects.get(id=variant_id)
+        product_variant.stock_quantity -= quantity
+        product_variant.save()
