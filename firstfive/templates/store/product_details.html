@@ -45,6 +45,26 @@
                     <p>${{ product.variants.first.price|floatformat }}</p>
                 </div>
             </div>
+            <div class="variant-selection">
+                <h4>Sizes Available</h4>
+                <div class="size-options">
+                    {% if small_exists %}
+                        <div class="sizebox" value="small">Small</div>
+                    {% else %}
+                        <div class="sizebox-disabled" value="small">Small</div>
+                    {% endif %}
+                    {% if medium_exists %}
+                        <div class="sizebox" value="medium">Medium</div>
+                    {% else %}
+                        <div class="sizebox-disabled" value="small">Medium</div>
+                    {% endif %}
+                    {% if large_exists %}
+                        <div class="sizebox" value="large">Large</div>
+                    {% else %}
+                        <div class="sizebox-disabled" value="small">Large</div>
+                    {% endif %}
+                </div>
+            </div>
             <div class="purchase-button-wrapper">
                 <a class="purchase-link" href="{% url 'store:purchase' product.id %}">Purchase</a>
             </div>

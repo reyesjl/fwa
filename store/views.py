@@ -27,8 +27,23 @@ def product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     product_with_prefetched_data = Product.objects.prefetch_related('variants', 'images').get(id=product_id)
     variants = product_with_prefetched_data.variants.filter(stock_quantity__gt=0)
+
+    # Initialize boolean variables to indicate whether each size variant exists
+    small_exists = False
+    medium_exists = False
+    large_exists = False
+    
+    # Iterate over the variants and update boolean variables accordingly
+    for variant in variants:
+        if variant.size == "Small":
+            small_exists = True
+        elif variant.size == "Medium":
+            medium_exists = True
+        elif variant.size == "Large":
+            large_exists = True
+
     images = product_with_prefetched_data.images.all()
-    return render(request, 'store/product_details.html', {'product': product, 'variants': variants, 'images': images})
+    return render(request, 'store/product_details.html', {'product': product, 'small_exists': small_exists, 'medium_exists': medium_exists, 'large_exists': large_exists, 'variants': variants, 'images': images})
 
 def purchase(request, product_id):
     product = get_object_or_404(Product, pk=product_id)

@@ -74,6 +74,38 @@
     text-align: right;
 }
 
+.size-options {
+    display: flex;
+    gap: 5px;
+}
+
+.sizebox {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.sizebox:hover {
+    padding: 10px;
+    border: 1px solid black;
+    background: darkred;
+    color: white;
+    cursor: pointer;
+}
+
+.sizebox.selected {
+    background-color: black;
+    color: white;
+}
+
+.sizebox-disabled {
+    padding: 10px;
+    background-color: lightgray;
+    color: gray;
+    text-decoration: line-through;
+    user-select: none;
+    cursor: unset;
+}
+
 @media only screen and (max-width: 768px) {
     .product {
         padding-top: 120px;
