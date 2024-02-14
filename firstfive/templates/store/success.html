@@ -6,14 +6,14 @@
 
 {% block extra_head %}
     <meta name="description" content="Payment was successful.">
-    <link rel="stylesheet" href="{% static 'css/recruiting.css' %}">
+    <link rel="stylesheet" href="{% static 'css/success.css' %}">
 {% endblock %}
 
 {% block content %}
-<main>
-    <section id="success-section">
+<div class="success-wrapper">
+    <div class="container">
         <h2 class="section-title">Payment success</h2>
         <p>Thank you for your purchase.</p>
-    </section>
-</main>
+    </div>
+</div>
 {% endblock %}
