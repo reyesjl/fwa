@@ -14,30 +14,24 @@
 <section class="store-section">
     <div class="container">
         <div class="daily-section">
-            <h1 class="store-title">FIRST FIVE STORE 2024 <span class="item-count">[0]</span></h1>
+            <h1 class="store-title">FIRST FIVE STORE 2024 <span class="item-count">[{{ products|length }}]</span></h1>
             <p class="store-subtitle">Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</p> 
-
-            <div class="product-wrapper">
-                <p>coming soon...</p>
+            <div class="products-wrapper">
+                {% for product in products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-title">{{ product.title }}</p>
+                        <div class="category-price-wrapper">
+                            <p class="product-category">{{ product.category }}</p>
+                            <p class="product-price">${{ product.first_variant.price }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-        </div>
-
-        <div class="team-section">
-            <h1 class="store-title">CANTERBURY CUSTOM KIT <span class="item-count">[0]</span></h1>
-            <p class="store-subtitle">Team gear tailored to your club - free mockups available for teams.</p>
-
-            <div class="product-wrapper">
-                <p>coming soon...</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="products-section">
-    <!-- Example of a product loaded dynamically -->
-    <div class="container">
-        <div class="product-list-wrapper">
-           
         </div>
     </div>
 </section>

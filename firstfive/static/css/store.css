@@ -15,69 +15,50 @@
     width: 70%;
 }
 
-.product-wrapper {
-    color: gray;
-}
-
-.daily-section {
-    margin-bottom: 70px;
-}
-
-.team-section {
-    margin-bottom: 70px;
-}
-
-.product-list-wrapper {
+.products-wrapper {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
 }
 
-.product {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 20%;
-    padding: 2px;
+.product-item {
+    width: 23%;
+}
+
+.product-details p {
+    margin: 0;
 }
 
 .product-title {
-    font-weight: light;
-    font-size: .9rem;
+    padding-top: 10px;
+    font-size: .9em;
+}
+
+.product-image img {
+    width: 100%;
+}
+
+.category-price-wrapper {
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .9em;
 }
 
 .product-category {
     color: gray;
 }
 
-.product img {
-    width: 100%;
-    height: auto;
-}
-
 .item-count {
-    font-size: .7rem;
     color: gray;
-}
-
-.detail {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.detail p {
-    margin: 0;
+    font-size: .7em;
 }
 
 @media only screen and (max-width: 768px) {
-    .product-list-wrapper {
-        align-items: center;
-        justify-content: space-between;
-        gap: .5rem;
-    }
-
-    .product {
-        max-width: 45%;
+    .product-item {
+        width: 48%;
     }
 
     .store-subtitle {

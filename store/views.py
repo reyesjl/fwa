@@ -9,7 +9,14 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def store(request):
-    products = Product.objects.filter(is_available=True)
+    # Fetch available products along with their first variant and main image
+    products = Product.objects.filter(is_available=True).prefetch_related('variants', 'images')
+    
+    # Modify each product to include only the first variant and main image
+    for product in products:
+        product.first_variant = product.variants.first()  # Get the first variant
+        product.main_image = product.images.filter(is_main=True).first()
+    
     return render(request, 'store/store.html', {'products': products})
 
 def products(request):
@@ -18,29 +25,46 @@ def products(request):
 
 def product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
-    return render(request, 'store/product_details.html', {'product': product})
+    product_with_prefetched_data = Product.objects.prefetch_related('variants', 'images').get(id=product_id)
+    variants = product_with_prefetched_data.variants.filter(stock_quantity__gt=0)
+    images = product_with_prefetched_data.images.all()
+    return render(request, 'store/product_details.html', {'product': product, 'variants': variants, 'images': images})
 
 def purchase(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
+    # Get the selected variant (assuming the user has selected a variant)
+    selected_variant = product.variants.first()  # Update this to fetch the selected variant
+
+    # Ensure a variant is selected before proceeding
+    if selected_variant is None:
+        # Handle case where no variant is selected
+        return HttpResponse("No variant selected.")
+
+    # Prepare line item for Stripe checkout session
+    line_item = {
+        'price_data': {
+            'currency': 'usd',
+            'product_data': {
+                'name': product.title,
+            },
+            'unit_amount': int(selected_variant.price * 100),  # Convert price to cents
+        },
+        'quantity': 1,
+    }
+
+    # Create Stripe checkout session
     checkout_session = stripe.checkout.Session.create(
         payment_method_types=['card'],
-        line_items=[{
-            'price_data': {
-                'currency': 'usd',
-                'product_data': {
-                    'name': product.title,
-                },
-                'unit_amount': int(product.price * 100),  # price in cents
-            },
-            'quantity': 1,
-        }],
+        line_items=[line_item],
         mode='payment',
-        success_url=request.build_absolute_uri(reverse('success')),
-        cancel_url=request.build_absolute_uri(product.get_absolute_url()),
+        success_url=request.build_absolute_uri(reverse('store:payment_success')),
+        cancel_url=request.build_absolute_uri(reverse('store:product_details', args=[product.id])),
         metadata={
             'product_id': str(product.id),  # Include product ID
             'product_title': product.title,  # Include product title
+            'variant_id': str(selected_variant.id),  # Include variant ID
+            'variant_size': selected_variant.size,  # Include variant size
         },
     )
 
