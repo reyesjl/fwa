@@ -53,7 +53,7 @@ class TeamItemSubmissionForm(forms.ModelForm):
             'email': 'Email Address',
             'phone': 'Phone Number',
             'teamname': 'Team Name',
-            'team_primary_color', 'Team Main Color',
-            'team_seconday_color', 'Team Secondary Color',
+            'team_primary_color': 'Team Main Color',
+            'team_seconday_color': 'Team Secondary Color',
             'teamsize': 'Team Size',
         }
