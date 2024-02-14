@@ -43,7 +43,15 @@ def product_details(request, product_id):
             large_exists = True
 
     images = product_with_prefetched_data.images.all()
-    return render(request, 'store/product_details.html', {'product': product, 'small_exists': small_exists, 'medium_exists': medium_exists, 'large_exists': large_exists, 'variants': variants, 'images': images})
+    context = {
+        'product': product, 
+        'small_exists': small_exists, 
+        'medium_exists': medium_exists, 
+        'large_exists': large_exists, 
+        'variants': variants, 
+        'images': images,
+    }
+    return render(request, 'store/product_details.html', context)
 
 def purchase(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
@@ -81,6 +89,12 @@ def purchase(request, product_id):
             'variant_id': str(selected_variant.id),  # Include variant ID
             'variant_size': selected_variant.size,  # Include variant size
         },
+        payment_intent_data={
+            'product_id': str(product.id),  # Include product ID
+            'product_title': product.title,  # Include product title
+            'variant_id': str(selected_variant.id),  # Include variant ID
+            'variant_size': selected_variant.size,  # Include variant size
+        }
     )
 
     return redirect(checkout_session.url)
