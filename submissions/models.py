@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-from .choices import STATUS_OPTIONS, COUNTRY_OPTIONS
+from .choices import STATUS_OPTIONS, COUNTRY_OPTIONS, TEAM_ITEM_OPTIONS
 
 class BaseSubmissionModel(models.Model):
     firstname = models.CharField(max_length=50)
@@ -23,6 +23,11 @@ class ToursSubmission(BaseSubmissionModel):
     teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
 
 class CanterburyKitSubmission(BaseSubmissionModel):
+    teamname = models.CharField(max_length=100, default='Firstfive RFC')
+    teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
+
+class TeamItemSubmission(BaseSubmissionModel):
+    product_name = models.CharField(choices=TEAM_ITEM_OPTIONS, max_length=50, default='Rugby Caps')
     teamname = models.CharField(max_length=100, default='Firstfive RFC')
     teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
     

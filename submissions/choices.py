@@ -12,3 +12,7 @@ COUNTRY_OPTIONS = [
     ('Scotland', 'Scotland'),
     ('Wales', 'Wales'),
 ]
+
+TEAM_ITEM_OPTIONS = [
+    ('Rugby Caps', 'Rugby Caps')
+]

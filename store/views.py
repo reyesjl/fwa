@@ -32,7 +32,7 @@ def product_details(request, product_id):
     small_exists = False
     medium_exists = False
     large_exists = False
-    
+
     # Iterate over the variants and update boolean variables accordingly
     for variant in variants:
         if variant.size == "Small":
@@ -41,6 +41,11 @@ def product_details(request, product_id):
             medium_exists = True
         elif variant.size == "Large":
             large_exists = True
+    
+    # Check if this is a team item
+    team_item = False
+    if product.category == "Team":
+        team_item = True
 
     images = product_with_prefetched_data.images.all()
     context = {
@@ -50,6 +55,7 @@ def product_details(request, product_id):
         "large_exists": large_exists, 
         "variants": variants, 
         "images": images,
+        "team_item": team_item,
     }
     return render(request, 'store/product_details.html', context)
 

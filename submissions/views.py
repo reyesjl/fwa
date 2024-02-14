@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import RecruitingSubmissionForm, ToursSubmissionForm
+from .forms import RecruitingSubmissionForm, ToursSubmissionForm, TeamItemSubmissionForm
 
 def handle_recruiting_submissions(request):
     title = 'Apply to Study Abroad'
@@ -17,7 +17,7 @@ def handle_recruiting_submissions(request):
         'form': form,
         'title': title,
     }
-    return render(request, 'submissions/handle_submission_form.html', context)
+    return render(request, 'submissions/handle_recruiting_form.html', context)
 
 def handle_tours_submissions(request):
     title = 'Apply for a Free Tours Quote'
@@ -35,7 +35,26 @@ def handle_tours_submissions(request):
         'form': form,
         'title': title,
     }
-    return render(request, 'submissions/handle_submission_form.html', context)
+    return render(request, 'submissions/handle_tours_form.html', context)
+
+def handle_team_item_submissions(request):
+    title = 'Team Quote Form'
+    form = TeamItemSubmissionForm()
+
+    if request.method == 'POST':
+        form = TeamItemSubmissionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('submissions:success', message='Your team item form has been submitted')
+        else:
+            form = TeamItemSubmissionForm()  # Ensure form remains read-only
+
+    context = {
+        "form": form,
+        "title": title,
+    }
+    return render(request, 'submissions/handle_team_item_form.html', context)
+
         
 def success_page(request, message):
     return render(request, 'submissions/success.html', {'message' : message})

@@ -45,6 +45,11 @@
                     <p>${{ product.variants.first.price|floatformat }}</p>
                 </div>
             </div>
+            {% if team_item %}
+            <div class="purchase-button-wrapper">
+                <a class="purchase-link" href="{% url 'submissions:team_item_submission' %}">Free Quote</a>
+            </div>
+            {% else %}
             <div class="variant-selection">
                 <h4>Sizes Available</h4>
                 <div class="size-options">
@@ -68,6 +73,7 @@
             <div class="purchase-button-wrapper">
                 <a class="purchase-link" href="{% url 'store:purchase' product.id %}">Purchase</a>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
