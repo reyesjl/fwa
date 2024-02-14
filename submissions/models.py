@@ -29,6 +29,8 @@ class CanterburyKitSubmission(BaseSubmissionModel):
 class TeamItemSubmission(BaseSubmissionModel):
     product_name = models.CharField(choices=TEAM_ITEM_OPTIONS, max_length=50, default='Rugby Caps')
     teamname = models.CharField(max_length=100, default='Firstfive RFC')
+    team_primary_color = models.CharField(max_length=50, default='red')
+    team_secondary_color = models.CharField(max_length=50, default='black')
     teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
     
     
