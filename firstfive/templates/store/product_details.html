@@ -46,35 +46,37 @@
                 </div>
             </div>
             {% if team_item %}
-            <div class="purchase-button-wrapper">
-                <a class="purchase-link" href="{% url 'submissions:team_item_submission' %}">Free Quote</a>
-            </div>
+                <div class="purchase-button-wrapper">
+                    <a class="purchase-link" href="{% url 'submissions:team_item_submission' %}">Free Quote</a>
+                </div>
             {% else %}
-                {% if small_exists or medium_exists or large_exists %}
-                    <div class="variant-selection">
-                        <div class="size-options">
-                            {% if small_exists %}
-                                <div class="sizebox" value="small">Small</div>
-                            {% else %}
-                                <div class="sizebox-disabled" value="small">Small</div>
-                            {% endif %}
-                            {% if medium_exists %}
-                                <div class="sizebox" value="medium">Medium</div>
-                            {% else %}
-                                <div class="sizebox-disabled" value="small">Medium</div>
-                            {% endif %}
-                            {% if large_exists %}
-                                <div class="sizebox" value="large">Large</div>
-                            {% else %}
-                                <div class="sizebox-disabled" value="small">Large</div>
-                            {% endif %}
-                        </div>
+                <div class="variant-selection">
+                    <div class="size-options">
+                        {% if variant_exists.Small %}
+                            <div class="sizebox" value="small">Small</div>
+                        {% else %}
+                            <div class="sizebox-disabled" value="small">Small</div>
+                        {% endif %}
+                        {% if variant_exists.Medium %}
+                            <div class="sizebox" value="medium">Medium</div>
+                        {% else %}
+                            <div class="sizebox-disabled" value="medium">Medium</div>
+                        {% endif %}
+                        {% if variant_exists.Large %}
+                            <div class="sizebox" value="large">Large</div>
+                        {% else %}
+                            <div class="sizebox-disabled" value="large">Large</div>
+                        {% endif %}
                     </div>
+                </div>
+                {% if variant_exists.Small or variant_exists.Medium or variant_exists.Large %}
                     <div class="purchase-button-wrapper">
                         <a class="purchase-link" href="{% url 'store:purchase' product.id %}">Purchase</a>
                     </div>
                 {% else %}
-                    <div class="purchase-link sold-out">Sold out</div>
+                    <div class="purchase-button-wrapper"></div>
+                        <div class="purchase-link sold-out">Sold out</div>
+                    </div>
                 {% endif %}
             {% endif %}
         </div>
