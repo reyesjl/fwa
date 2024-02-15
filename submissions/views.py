@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from .forms import RecruitingSubmissionForm, ToursSubmissionForm, TeamItemSubmissionForm
 
 def handle_recruiting_submissions(request):
-    title = 'Apply to Study Abroad'
+    title = 'Study Abroad Interest Form'
     form = RecruitingSubmissionForm()
     if request.method == 'POST':
         form = RecruitingSubmissionForm(request.POST)
@@ -20,7 +20,7 @@ def handle_recruiting_submissions(request):
     return render(request, 'submissions/handle_recruiting_form.html', context)
 
 def handle_tours_submissions(request):
-    title = 'Apply for a Free Tours Quote'
+    title = 'Tours Interest Form'
     form = ToursSubmissionForm()
     if request.method == 'POST':
         form = ToursSubmissionForm(request.POST)
@@ -38,7 +38,7 @@ def handle_tours_submissions(request):
     return render(request, 'submissions/handle_tours_form.html', context)
 
 def handle_team_item_submissions(request):
-    title = 'Team Quote Form'
+    title = 'Team Item Interest Form'
     form = TeamItemSubmissionForm()
 
     if request.method == 'POST':
