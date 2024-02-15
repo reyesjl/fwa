@@ -26,7 +26,8 @@ def products(request):
 def product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     product_with_prefetched_data = Product.objects.prefetch_related('variants', 'images').get(id=product_id)
-    variants = product_with_prefetched_data.variants.filter(stock_quantity__gt=0)
+    variants = product_with_prefetched_data.variants.filter(stock_quantity__gt=0).order_by('-size')
+    images = product_with_prefetched_data.images.all()
 
     # Initialize a dictionary to store variant existence
     variant_exists = {size: False for size in ['Small', 'Medium', 'Large']}
@@ -40,7 +41,7 @@ def product_details(request, product_id):
     if product.category == "Team":
         team_item = True
 
-    images = product_with_prefetched_data.images.all()
+    
     context = {
         "product": product, 
         "variants": variants, 

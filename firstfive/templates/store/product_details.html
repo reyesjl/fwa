@@ -69,7 +69,7 @@
                         {% endif %}
                     </div>
                 </div>
-                {% if variant_exists.Small or variant_exists.Medium or variant_exists.Large %}
+                {% if variants %}
                     <div class="purchase-button-wrapper">
                         <a class="purchase-link" href="{% url 'store:purchase' product.id %}">Purchase</a>
                     </div>
