@@ -224,6 +224,7 @@
 
     .level-desc {
         width: auto;
+        padding: 0;
     }
 
     .level-desc.secondary {
