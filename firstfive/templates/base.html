@@ -17,13 +17,15 @@
 </head>
 <body>
     <nav class="navigation-bar">
-        <div class="logo-wrapper">
-            <a href="{% url 'f5index:home' %}"><img src="{% static 'media/index/firstfive-logo.png' %}" /></a>
+        <div class="nav-content-wrapper">
+            <div class="logo-wrapper">
+                <a href="{% url 'f5index:home' %}"><img src="{% static 'media/index/firstfive-logo.png' %}" /></a>
+            </div>
+            <a class="navigation-link" href="{% url 'f5index:home' %}">Home</a>
+            <a class="navigation-link" href="{% url 'f5index:about' %}">About</a>
+            <a class="navigation-link" href="{% url 'store:store' %}">Store</a>
+            <a class="navigation-link" href="{% url 'f5index:services' %}">Services</a>
         </div>
-        <a class="navigation-link" href="{% url 'f5index:home' %}">Home</a>
-        <a class="navigation-link" href="{% url 'f5index:about' %}">About</a>
-        <a class="navigation-link" href="{% url 'store:store' %}">Store</a>
-        <a class="navigation-link" href="{% url 'f5index:services' %}">Services</a>
     </nav>
     {% block content %}
     {% endblock %}

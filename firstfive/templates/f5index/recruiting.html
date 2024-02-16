@@ -7,6 +7,7 @@
 {% block extra_head %}
     <meta name="description" content="Embark on an unparalleled rugby adventure! Our program offers players the unique opportunity to study and play in top rugby nations like the USA, Ireland, Scotland, and England. Elevate your skills and education on an international stage.">
     <link rel="stylesheet" href="{% static 'css/recruiting.css' %}">
+    <script src="{% static 'js/modal.js'%}"></script>
 {% endblock %}
 
 {% block content %}
@@ -14,7 +15,6 @@
     <div class="container">
         <div class="roles-container">
             <h1 class="roles-title">Follow your own <span class="highlight">pro pathway</span> and get a great education.</h1>
-            <p>More information available below.</p>
             <a class="apply-button" href="{% url 'submissions:recruiting_submission' %}">Scholarships Available</a>
             <div class="roles-wrapper">
                 <div class="role">
@@ -64,11 +64,39 @@
 <section class="info-section">
     <div class="container">
         <div class="info-container">
-            <p class="info-subtitle">Service</p>
-            <h1 class="info-title">About the Program.</h1>
+            <h1 class="title">Pathway</h1>
+            <p class="info-subtitle">Travel. Study. Excel.</p>
             <p class="info-summary">First Five Rugby recruiting has over 25 years of experience placing athletes in international and top ranked programs with a direct pathway to a professional club - resulting in students furthering their education while also getting the opportunity to test their abilities in a world class environment.</p>
-            <br />
-            <a class="apply-button" href="{% url 'submissions:recruiting_submission' %}">Scholarships Available</a>
+        </div>
+    </div>
+</section>
+
+<section class="age-section">
+    <div class="sm-container">
+        <div class="age-section-wrapper">
+            <h1 class="title age">Explore all the options.</h1>
+        </div>
+        <div class="levels-section-wrapper">
+            <div class="level-wrapper">
+                <div class="level-image">
+                    <img src="{% static 'media/recruiting/highschool.jpg' %}" alt="highschool photo"/>
+                </div>
+                <div class="level-desc">
+                    <h3>High School</h3>
+                    <p>High school aged students to attend school and play rugby at multiple English, Scottish, Welsh, and Irish schools.</p>
+                    <a class="level apply-button float-right" href="{% url 'submissions:recruiting_submission' %}">Apply Now</a>
+                </div>
+            </div>
+            <div class="level-wrapper order-secondary">
+                <div class="level-desc secondary">
+                    <h3>College</h3>
+                    <p>University aged students to attend school and play rugby at top American Universities in the United States.</p>
+                    <a class="level apply-button" href="{% url 'submissions:recruiting_submission' %}">Apply Now</a>
+                </div>
+                <div class="level-image">
+                    <img src="{% static 'media/recruiting/college.jpg' %}" alt="highschool photo"/>
+                </div>
+            </div>
         </div>
     </div>
 </section>

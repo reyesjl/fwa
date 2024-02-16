@@ -1,5 +1,5 @@
 .selection-section {
-    padding-top: 150px;
+    padding-top: 80px;
     background: black;
     color: white;
     background-image: url('/static/media/recruiting/library-bg.jpg');
@@ -10,6 +10,15 @@
 
 .container {
     max-width: 90%;
+    margin: 0 auto;
+}
+
+.selection-section {
+    margin-bottom: 100px;
+}
+
+.sm-container {
+    max-width: 1024px;
     margin: 0 auto;
 }
 
@@ -102,20 +111,23 @@
 }
 
 .info-container {
-    padding: 100px 0;
+    margin-bottom: 100px;
     text-align: center;
 }
 
-.info-subtitle {
-    font-weight: bold;
-    font-size: 1.4em;
-    margin-bottom: 0;
-}
-
-.info-title {
-    margin-top: 0;
+.title {
+    margin: 0;
     font-size: 5em;
     color: rgb(32, 32, 32);
+}
+
+.title.age {
+    font-size: 2.2em;
+}
+
+.info-subtitle {
+    font-size: 1.4em;
+    margin: 0;
 }
 
 .info-summary {
@@ -123,7 +135,65 @@
     font-size: 1.4em;
     width: 50%;
     margin: 0 auto;
+    padding-top: 20px;
     font-weight: bold;
+}
+
+.age-section {
+    margin-bottom: 100px;
+}
+
+.age-section-wrapper {
+    margin: 20px 0;
+    display: flex;
+}
+
+.case-option {
+    padding: 20px;
+    border-radius: 12px;
+    height: 200px;
+    width: 300px;
+    margin-right: 10px;
+    background: lightgrey;
+}
+
+.case-option:hover {
+    cursor: pointer;
+    background: rgb(180, 180, 180);
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.level-wrapper {
+    height: 60vh;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.level-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.level-desc {
+    color: rgb(148, 148, 148);
+    width: 40%;
+    padding: 0 30px;
+}
+
+.level.apply-button {
+    font-size: .9em;
+    margin: 0;
+    display: block;
+}
+
+.float-right {
+    float: right;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -131,13 +201,39 @@
         font-size: 1.4em;
     }
 
-    .info-title {
+    .title {
         font-size: 2.2em;
     }
 
     .info-summary {
         width: 100%;
         font-size: 1.3em;
+    }
+
+    .age-section-wrapper {
+        padding: 0 20px;
+    }
+
+    .option-section-wrapper {
+        padding: 0 20px;
+    }
+
+    .level-wrapper {
+        flex-direction: column;
+    }
+
+    .level-desc {
+        width: auto;
+    }
+
+    .level-desc.secondary {
+        order: 2;
+    }
+
+    .levels-section-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
     }
 }
 

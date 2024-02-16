@@ -8,26 +8,41 @@ body {
 
 /* Navigation bar */
 .navigation-bar {
-    padding: 20px;
+    width: 100%;
     position: fixed;
     z-index: 99;
-    background: linear-gradient(180deg, black, transparent);
-    width: 100%;
+    background: rgba(26, 26, 26, 0.938);
+}
+
+.nav-content-wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
 }
 
 .navigation-link {
     color: white;
-    margin-right: 10px;
+    padding: 0 10px;
     text-decoration: none;
-    text-transform: uppercase;
+    font-size: .8em;
 }
 
 .navigation-link:hover {
     color: gray;
 }
 
+.logo-wrapper a {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-wrapper img {
-    width: 100px; 
+    width: 80px; 
     height: auto; 
 }
 
