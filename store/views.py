@@ -17,10 +17,11 @@ def store(request):
     donation_products = Product.objects.filter(category='Donation', is_available=True).prefetch_related('variants', 'images')
 
     # Optionally, you can fetch the first variant and main image for each product
-    for products in [vintage_products, signed_products, team_products, donation_products]:
+    for products in [featured_products, vintage_products, signed_products, team_products, donation_products]:
         for product in products:
             product.first_variant = product.variants.first()
             product.main_image = product.images.filter(is_main=True).first()
+
     context = {
         'featured_products': featured_products,
         'vintage_products': vintage_products,
