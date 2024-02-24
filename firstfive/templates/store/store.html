@@ -13,11 +13,64 @@
 <!-- Store Section -->
 <section class="store-section">
     <div class="container">
-        <div class="daily-section">
-            <h1 class="store-title">FIRST FIVE STORE 2024 <span class="item-count">[{{ products|length }}]</span></h1>
-            <p class="store-subtitle">Explore our curated selection of rugby apparel, ranging from streetwear to vintage jerseys and clubwear.</p> 
+        <h1 class="store-title">FIRST FIVE STORE 2024</h1>
+        
+        <!-- FEATURED PRODUCTS -->
+        <div class="product-section featured">
+            <div class="section-title">
+                <h4 class="title">Vintage Products <span class="item-count">[{{ vintage_products|length }}]</span></h4>
+                <p class="subtitle">Choose from a variety of classic rugby jerseys with a story.</p>
+            </div>
             <div class="products-wrapper">
-                {% for product in products %}
+                {% for product in vintage_products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-title">{{ product.title }}</p>
+                        <div class="category-price-wrapper">
+                            <p class="product-category">{{ product.category }}</p>
+                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <!-- SIGNED PRODUCTS -->
+        <div class="product-section featured">
+            <div class="section-title">
+                <h4 class="title">Signed Products <span class="item-count">[{{ signed_products|length }}]</span></h4>
+                <p class="subtitle">See historic signed rugby jerseys and own a piece of history.</p>
+            </div>
+            <div class="products-wrapper">
+                {% for product in signed_products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-title">{{ product.title }}</p>
+                        <div class="category-price-wrapper">
+                            <p class="product-category">{{ product.category }}</p>
+                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+         <!-- TEAM PRODUCTS -->
+        <div class="product-section featured">
+            <div class="section-title">
+                <h4 class="title">Team Products <span class="item-count">[{{ team_products|length }}]</span></h4>
+                <p class="subtitle">Order team items for 25+ players. Custom design and free quote.</p>
+            </div>
+            <div class="products-wrapper">
+                {% for product in team_products %}
                 <div class="product-item">
                     <div class="product-image">
                         <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>

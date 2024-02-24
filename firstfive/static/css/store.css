@@ -1,5 +1,5 @@
 .store-section {
-    padding-top: 120px;
+    padding-top: 40px;
 }
 
 .container {
@@ -11,12 +11,27 @@
     font-weight: normal;
 }
 
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-title .title {
+    margin: 0;
+}
+
+.section-title .subtitle {
+    margin: 0;
+}
+
 .store-subtitle {
     width: 70%;
 }
 
+.product-section {
+    margin-bottom: 100px;
+}
+
 .products-wrapper {
-    margin: 40px 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;

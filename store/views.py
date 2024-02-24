@@ -9,15 +9,24 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def store(request):
-    # Fetch available products along with their first variant and main image
-    products = Product.objects.filter(is_available=True).prefetch_related('variants', 'images')
-    
-    # Modify each product to include only the first variant and main image
-    for product in products:
-        product.first_variant = product.variants.first()  # Get the first variant
-        product.main_image = product.images.filter(is_main=True).first()
-    
-    return render(request, 'store/store.html', {'products': products})
+    # Fetch products for each category
+    vintage_products = Product.objects.filter(category='Vintage', is_available=True).prefetch_related('variants', 'images')
+    signed_products = Product.objects.filter(category='Signed', is_available=True).prefetch_related('variants', 'images')
+    team_products = Product.objects.filter(category='Team', is_available=True).prefetch_related('variants', 'images')
+    donation_products = Product.objects.filter(category='Donation', is_available=True).prefetch_related('variants', 'images')
+
+    # Optionally, you can fetch the first variant and main image for each product
+    for products in [vintage_products, signed_products, team_products, donation_products]:
+        for product in products:
+            product.first_variant = product.variants.first()
+            product.main_image = product.images.filter(is_main=True).first()
+    context = {
+        'vintage_products': vintage_products,
+        'signed_products': signed_products,
+        'team_products': team_products,
+        'donation_products': donation_products
+        }
+    return render(request, 'store/store.html', context)
 
 def products(request):
     products = Product.objects.filter(is_available=True)
