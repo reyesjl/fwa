@@ -14,8 +14,33 @@
 <section class="store-section">
     <div class="container">
         <h1 class="store-title">FIRST FIVE STORE 2024</h1>
+
+         <!-- FEATURED PRODUCTS -->
+        <div class="product-section featured">
+            <div class="section-title">
+                <h4 class="title">Featured Products <span class="item-count">[{{ vintage_products|length }}]</span></h4>
+                <p class="subtitle">Choose from a variety of featured items that rotate weekly.</p>
+                <hr>
+            </div>
+            <div class="products-wrapper">
+                {% for product in featured_products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+                    </div>
+                    <div class="product-details">
+                        <p class="product-title">{{ product.title }}</p>
+                        <div class="category-price-wrapper">
+                            <p class="product-category">{{ product.category }}</p>
+                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
         
-        <!-- FEATURED PRODUCTS -->
+        <!-- VINTAGE PRODUCTS -->
         <div class="product-section featured">
             <div class="section-title">
                 <h4 class="title">Vintage Products <span class="item-count">[{{ vintage_products|length }}]</span></h4>

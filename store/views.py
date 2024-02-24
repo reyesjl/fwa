@@ -10,6 +10,7 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def store(request):
     # Fetch products for each category
+    featured_products = Product.objects.filter(category='Featured', is_available=True).prefetch_related('variants', 'images')
     vintage_products = Product.objects.filter(category='Vintage', is_available=True).prefetch_related('variants', 'images')
     signed_products = Product.objects.filter(category='Signed', is_available=True).prefetch_related('variants', 'images')
     team_products = Product.objects.filter(category='Team', is_available=True).prefetch_related('variants', 'images')
