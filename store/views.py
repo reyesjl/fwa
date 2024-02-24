@@ -22,7 +22,7 @@ def store(request):
             product.first_variant = product.variants.first()
             product.main_image = product.images.filter(is_main=True).first()
     context = {
-        'featured_products': vintage_products,
+        'featured_products': featured_products,
         'vintage_products': vintage_products,
         'signed_products': signed_products,
         'team_products': team_products,
