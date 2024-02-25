@@ -2,9 +2,17 @@
     padding-top: 40px;
 }
 
+.featured-image {
+    width: 100%;
+}
+
 .container {
     max-width: 90%;
     margin: 0 auto;
+}
+
+.products-container {
+    margin-top: 40px;
 }
 
 .store-title {
@@ -71,7 +79,19 @@
     font-size: .7em;
 }
 
+.mobile-only {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+    
     .product-item {
         width: 48%;
     }

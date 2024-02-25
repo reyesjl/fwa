@@ -12,9 +12,19 @@
 {% block content %}
 <!-- Store Section -->
 <section class="store-section">
-    <div class="container">
-        <h1 class="store-title">FIRST FIVE STORE 2024</h1>
+    <div class="featured-ad desktop-only">
+        <a href="{% url 'store:product_details' 9 %}">
+            <img class="featured-image" src="{% static 'media/store/featured-ad.jpg' %}" />
+        </a>
+    </div>
 
+    <div class="featured-ad mobile-only">
+        <a href="{% url 'store:product_details' 9 %}">
+            <img class="featured-image" src="{% static 'media/store/featured-ad-mobile.jpg' %}" />
+        </a>
+    </div>
+
+    <div class="products-container container">
         <!-- FEATURED PRODUCTS -->
         {% if featured_products %}
         <div class="product-section featured">
