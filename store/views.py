@@ -31,6 +31,21 @@ def store(request):
         }
     return render(request, 'store/store.html', context)
 
+def products_by_category(request, category_name):
+    # Fetch products for the specified category
+    category_products = Product.get_products_by_category(category_name).filter(is_available=True).prefetch_related('variants', 'images')
+
+    # Optionally, you can fetch the first variant and main image for each product
+    for product in category_products:
+        product.first_variant = product.variants.first()
+        product.main_image = product.get_main_image()
+
+    context = {
+        'category_name': category_name,
+        'category_products': category_products
+    }
+    return render(request, 'store/products_by_category.html', context)
+
 def products(request):
     products = Product.objects.filter(is_available=True)
     return render(request, 'store/products.html', {'products': products})

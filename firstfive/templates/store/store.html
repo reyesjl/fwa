@@ -12,6 +12,12 @@
 {% block content %}
 <!-- Store Section -->
 <section class="store-section">
+    <div class="store-nav">
+        <a class="store-link" href="{% url 'store:products_by_category' 'Team' %}">Team</a>
+        <a class="store-link" href="{% url 'store:products_by_category' 'Vintage' %}">Vintage</a>
+        <a class="store-link" href="{% url 'store:products_by_category' 'Deals' %}">Deals</a>
+        <a class="store-link" href="{% url 'store:products_by_category' 'Signed' %}">Signed</a>
+    </div>
     <div class="featured-ad desktop-only">
         <a href="{% url 'store:product_details' 9 %}">
             <img class="featured-image" src="{% static 'media/store/featured-ad.jpg' %}" />

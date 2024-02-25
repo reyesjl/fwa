@@ -9,6 +9,17 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    def get_main_image(self):
+        return self.images.filter(is_main=True).first()
+
+    @classmethod
+    def get_products_by_category(cls, category_name):
+        return cls.objects.filter(category=category_name)
+
+    @classmethod
+    def get_products_by_brand(cls, brand_name):
+        return cls.objects.filter(brand=brand_name)
+
     def __str__(self):
         return self.title
 

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Store page {% endblock %}
+
+{% load static %}
+
+{% block extra_head %}
+<meta name="description" content="View products from a given category.">
+<link rel="stylesheet" href="{% static 'css/products_by_category.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="nav-spacer">
+</div>
+<div class="container category-products">
+    <h1>{{category_name}}</h1>
+    {% for product in category_products %}
+        <div class="product">
+            <div class="product-image-wrapper"><img class="product-image" src="{{ product.main_image.image.url }}"></div>
+            <div class="product-price">${{product.first_variant.price}}</div>
+            <div class="product-title"><a class="product-title-link" href="{% url 'store:product_details' product.id %}">{{product.title}}</a></div>
+        </div>
+
+    {% empty %}
+    <p>All products for this category have been sold out.</p>
+    {% endfor %}
+</div>
+{% endblock %}
