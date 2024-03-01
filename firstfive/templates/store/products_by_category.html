@@ -18,7 +18,7 @@
         <div class="product">
             <div class="product-image-wrapper"><img class="product-image" src="{{ product.main_image.image.url }}"></div>
             <div class="product-price">${{product.first_variant.price}}</div>
-            <div class="product-title"><a class="product-title-link" href="{% url 'store:product_details' product.id %}">{{product.title}}</a></div>
+            <div class="product-title"><a class="product-title-link" href="{% url 'store:product_details' product.id %}">{{product.title | truncatechars:20}}</a></div>
         </div>
 
     {% empty %}

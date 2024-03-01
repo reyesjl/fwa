@@ -9,9 +9,6 @@ class Product(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def get_main_image(self):
-        return self.images.filter(is_main=True).first()
-
     @classmethod
     def get_products_by_category(cls, category_name):
         return cls.objects.filter(category=category_name)
@@ -19,6 +16,39 @@ class Product(models.Model):
     @classmethod
     def get_products_by_brand(cls, brand_name):
         return cls.objects.filter(brand=brand_name)
+
+    def get_available_variants(self):
+        """
+        Get available variants for the product.
+        """
+        return self.variants.filter(stock_quantity__gt=0)
+
+    def is_team_item(self):
+        """
+        Check if the product belongs to the 'Team' category.
+        """
+        return self.category == 'Team'
+
+    def get_main_image(self):
+        return self.images.filter(is_main=True).first()
+
+    def is_in_stock(self):
+        """
+        Check if the product is in stock.
+        """
+        return self.variants.filter(stock_quantity__gt=0).exists()
+
+    def get_available_sizes(self):
+        """
+        Get available sizes for the product.
+        """
+        return self.variants.filter(stock_quantity__gt=0).values_list('size', flat=True).distinct()
+
+    def get_available_colors(self):
+        """
+        Get available colors for the product.
+        """
+        return self.variants.filter(stock_quantity__gt=0).values_list('color', flat=True).distinct()
 
     def __str__(self):
         return self.title

@@ -10,128 +10,92 @@
 {% endblock %}
 
 {% block content %}
+<div class="nav-spacer"></div>
+
 <!-- Store Section -->
-<section class="store-section">
-    <div class="store-nav">
-        <a class="store-link" href="{% url 'store:products_by_category' 'Team' %}">Team</a>
-        <a class="store-link" href="{% url 'store:products_by_category' 'Vintage' %}">Vintage</a>
-        <a class="store-link" href="{% url 'store:products_by_category' 'Deals' %}">Deals</a>
-        <a class="store-link" href="{% url 'store:products_by_category' 'Signed' %}">Signed</a>
-    </div>
-    <div class="featured-ad desktop-only">
-        <a href="{% url 'store:product_details' 9 %}">
-            <img class="featured-image" src="{% static 'media/store/featured-ad.jpg' %}" />
-        </a>
-    </div>
-
-    <div class="featured-ad mobile-only">
-        <a href="{% url 'store:product_details' 9 %}">
-            <img class="featured-image" src="{% static 'media/store/featured-ad-mobile.jpg' %}" />
-        </a>
-    </div>
-
-    <div class="products-container container">
-        <!-- FEATURED PRODUCTS -->
-        {% if featured_products %}
-        <div class="product-section featured">
-            <div class="section-title">
-                <h4 class="title">Featured Products <span class="item-count">[{{ featured_products|length }}]</span></h4>
-                <p class="subtitle">Choose from a variety of featured items that rotate weekly.</p>
-                <hr>
+<div class="banner row">
+    <div class="container">
+        <div class="store-banner-row">
+            <div class="store title">
+                <span class="keyword">Store.</span> The best way to buy the rugby items you love.
             </div>
-            <div class="products-wrapper">
-                {% for product in featured_products %}
-                <div class="product-item">
-                    <div class="product-image">
-                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+            <div class="store-assist-wrapper">
+                <div class="store assist">
+                    <div class="assist-image">
+                        <img src="{% static 'media/store/assist1.jpg' %}" />
                     </div>
-                    <div class="product-details">
-                        <p class="product-title">{{ product.title }}</p>
-                        <div class="category-price-wrapper">
-                            <p class="product-category">{{ product.category }}</p>
-                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
-                        </div>
+                    <div class="assist-text">
+                        <div class="assist-label">Need shopping help?</div>
+                        <div class="assist-link"><a href="">Ask a Specialist.</a></div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        
-        <!-- VINTAGE PRODUCTS -->
-        <div class="product-section featured">
-            <div class="section-title">
-                <h4 class="title">Vintage Products <span class="item-count">[{{ vintage_products|length }}]</span></h4>
-                <p class="subtitle">Choose from a variety of classic rugby jerseys with a story.</p>
-                <hr>
-            </div>
-            <div class="products-wrapper">
-                {% for product in vintage_products %}
-                <div class="product-item">
-                    <div class="product-image">
-                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
+                <div class="store assist">
+                    <div class="assist-image">
+                        <img src="{% static 'media/store/assist2.jpg' %}" />
                     </div>
-                    <div class="product-details">
-                        <p class="product-title">{{ product.title }}</p>
-                        <div class="category-price-wrapper">
-                            <p class="product-category">{{ product.category }}</p>
-                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
-                        </div>
+                    <div class="assist-text">
+                        <div class="assist-label">Have a clothing idea?</div>
+                        <div class="assist-link"><a href="">Submit a Design.</a></div>
                     </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-        
-        <!-- SIGNED PRODUCTS -->
-        <div class="product-section featured">
-            <div class="section-title">
-                <h4 class="title">Signed Products <span class="item-count">[{{ signed_products|length }}]</span></h4>
-                <p class="subtitle">See historic signed rugby jerseys and own a piece of history.</p>
-                <hr>
-            </div>
-            <div class="products-wrapper">
-                {% for product in signed_products %}
-                <div class="product-item">
-                    <div class="product-image">
-                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
-                    </div>
-                    <div class="product-details">
-                        <p class="product-title">{{ product.title }}</p>
-                        <div class="category-price-wrapper">
-                            <p class="product-category">{{ product.category }}</p>
-                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-
-         <!-- TEAM PRODUCTS -->
-        <div class="product-section featured">
-            <div class="section-title">
-                <h4 class="title">Team Products <span class="item-count">[{{ team_products|length }}]</span></h4>
-                <p class="subtitle">Order team items for 25+ players. Custom design and free quote.</p>
-                <hr>
-            </div>
-            <div class="products-wrapper">
-                {% for product in team_products %}
-                <div class="product-item">
-                    <div class="product-image">
-                        <a href="{% url 'store:product_details' product.id %}"><img src="{{ product.main_image.image.url }}" alt="{{ product.title }} Main Image"></a>
-                    </div>
-                    <div class="product-details">
-                        <p class="product-title">{{ product.title }}</p>
-                        <div class="category-price-wrapper">
-                            <p class="product-category">{{ product.category }}</p>
-                            <p class="product-price">${{ product.first_variant.price|floatformat }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
             </div>
         </div>
     </div>
-</section>
+</div>
+<div class="category row">
+    <div class="category container">
+        <div class="scroller-nav">
+            <div class="scroller-itemlist">
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/deals.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Deals
+                    </div>
+                </div>
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/signed.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Signed
+                    </div>
+                </div>
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/caps.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Caps
+                    </div>
+                </div>
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/team.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Team Customs
+                    </div>
+                </div>
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/vintage.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Vintage
+                    </div>
+                </div>
+                <div class="scroller-item">
+                    <div class="scroller-itemimage">
+                        <img src="{% static 'media/store/lifting.png' %}" />
+                    </div>
+                    <div class="scroller-itemtext">
+                        Lifting Kit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

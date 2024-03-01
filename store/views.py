@@ -53,28 +53,21 @@ def products(request):
 def product_details(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     product_with_prefetched_data = Product.objects.prefetch_related('variants', 'images').get(id=product_id)
-    variants = product_with_prefetched_data.variants.filter(stock_quantity__gt=0).order_by('-size')
+    variants = product_with_prefetched_data.get_available_variants()
     images = product_with_prefetched_data.images.all()
 
-    # Initialize a dictionary to store variant existence
-    variant_exists = {size: False for size in ['Small', 'Medium', 'Large']}
+    # Extract unique colors from available variants
+    unique_colors = set(variant.color for variant in variants)
 
-    # Iterate over the variants and update existence dictionary
-    for variant in variants:
-        variant_exists[variant.size] = True
-    
     # Check if this is a team item
-    team_item = False
-    if product.category == "Team":
-        team_item = True
-
+    team_item = product.is_team_item()
     
     context = {
         "product": product, 
         "variants": variants, 
         "images": images,
         "team_item": team_item,
-        "variant_exists": variant_exists,
+        "unique_colors": unique_colors,  # Pass unique colors to the template
     }
     return render(request, 'store/product_details.html', context)
 

@@ -6,81 +6,78 @@
 
 {% block extra_head %}
 <meta name="description" content="This is a product detail page for a rugby product sold on First Five Rugby.">
-<link rel="stylesheet" href="{% static 'css/product.css' %}">
+<link rel="stylesheet" href="{% static 'css/product_details.css' %}">
 <script src="{% static 'js/product_details.js'%}"></script>
 {% endblock %}
 
 {% block content %}
-<div class="product-wrapper">
-    <div class="product">
-        <div class="title-image-wrapper">
-            <h3 class="product-title">{{ product.title }}</h3>
-            <div class="product-image">
-                <img id="main-image" src="{{ product.images.first.image.url }}" alt="{{ product.title }}"/>
-                {% for image in images %}
-                    <img class="hidden-image" src="{{ image.image.url }}" alt="{{ product.title }}">
-                {% endfor %}
-            </div>
-            <div class="image-controller">
-                <div class="button option-left">Prev</div>
-                <div class="button option-right">Next</div>
-            </div>
+<div class="nav-spacer">
+</div>
+<div class="container product-details-wrapper">
+    <div class="product-details">
+        <div class="product-brand">{{ product.brand }}</div>
+        <div class="product-title">{{ product.title }}</div>
+        <div class="product-category">{{ product.category }}</div>
+    </div>
+
+    <!-- Images Wrapper -->
+    <div class="images-wrapper">
+        <!-- Product Images -->
+        <div class="product-images">
+            {% for image in images %}
+                <div class="product-image-wrapper">
+                    <img class="product-image" src="{{ image.image.url }}" alt="Product Image">
+                    <div class="product-image-overlay">
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-
-        <div class="description-details-wrapper">
-            <h4>Description</h4>
-            <p>{{ product.description }}</p>
-
-            <div class="product-details">
-                <div class="detail">
-                    <h4>Category</h4>
-                    <p>{{ product.category }}</p>
-                </div>
-                <div class="detail">
-                    <h4>Brand</h4>
-                    <p>{{ product.brand }}</p>
-                </div>
-                <div class="detail">
-                    <h4>Price</h4>
-                    <p>${{ product.variants.first.price|floatformat }}</p>
-                </div>
-            </div>
-            {% if team_item %}
-                <div class="purchase-button-wrapper">
-                    <a class="purchase-link" href="{% url 'submissions:team_item_submission' %}">Free Quote</a>
-                </div>
-            {% else %}
-                <div class="variant-selection">
-                    <h4>Available sizes</h4>
-                    <div class="size-options">
-                        {% if variant_exists.Small %}
-                            <div class="sizebox" value="small">Small</div>
-                        {% else %}
-                            <div class="sizebox-disabled" value="small">Small</div>
-                        {% endif %}
-                        {% if variant_exists.Medium %}
-                            <div class="sizebox" value="medium">Medium</div>
-                        {% else %}
-                            <div class="sizebox-disabled" value="medium">Medium</div>
-                        {% endif %}
-                        {% if variant_exists.Large %}
-                            <div class="sizebox" value="large">Large</div>
-                        {% else %}
-                            <div class="sizebox-disabled" value="large">Large</div>
-                        {% endif %}
-                    </div>
-                </div>
-                {% if variants %}
-                    <div class="purchase-button-wrapper">
-                        <a class="purchase-link" href="{% url 'store:purchase' product.id %}">Purchase</a>
-                    </div>
-                {% else %}
-                    <div class="purchase-button-wrapper"></div>
-                        <div class="purchase-link sold-out">Sold out</div>
-                    </div>
-                {% endif %}
-            {% endif %}
+        
+        <!-- Main Image Wrapper -->
+        <div class="main-image-wrapper">
+            <img class="main-image" src="{{ product.get_main_image.image.url }}" alt="Main Product Image">
         </div>
     </div>
+
+    <div class="sizes-and-colors">
+        <!-- Display available sizes -->
+        <div class="sizes-section">
+            <h2>Available Sizes:</h2>
+            <ul>
+                {% for variant in variants %}
+                    <li>{{ variant.size }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Display available colors -->
+        <div class="colors-section">
+            <h2>Available Colors:</h2>
+            <ul>
+                {% for color in unique_colors %}
+                    <li>{{ color }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Add to Cart form -->
+    <form method="post" action="#">
+        {% csrf_token %}
+        <select name="size">
+            <option value="">Select Size</option>
+            {% for variant in variants %}
+                <option value="{{ variant.size }}">{{ variant.size }}</option>
+            {% endfor %}
+        </select>
+        <select name="color">
+            <option value="">Select Color</option>
+            {% for color in unique_colors %}
+                <option value="{{ color }}">{{ color }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add to Cart">
+    </form>
 </div>
 {% endblock %}

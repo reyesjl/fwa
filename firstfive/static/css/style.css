@@ -7,6 +7,10 @@ body {
 }
 
 /* Navigation bar */
+.nav-spacer {
+    padding-top: 40px;
+}
+
 .navigation-bar {
     width: 100%;
     position: fixed;
