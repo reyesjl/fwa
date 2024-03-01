@@ -182,6 +182,10 @@ body {
     padding-bottom: 7px;
 }
 
+.product-price {
+    color: gray;
+}
+
 @media only screen and (max-width: 1024px) {
     .container {
         width: 90%;
