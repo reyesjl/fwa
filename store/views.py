@@ -14,7 +14,7 @@ def store(request):
     one_month_ago = datetime.now() - timedelta(days=30)
     
     # Retrieve products added within the last month
-    latest_products = Product.objects.filter(created_at__gte=one_month_ago)
+    latest_products = Product.objects.filter(created_at__gte=one_month_ago, is_available=True)
     
     # Fetch the first variant, main image, and price for each product
     for product in latest_products:
