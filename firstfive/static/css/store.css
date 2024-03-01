@@ -170,7 +170,6 @@ NAVIGATION */
 
 .scroller-platter.item {
     width: 309px;
-    height: 450px;
     padding: 0 0 0 22px;
     margin-right: 5px;
 }
@@ -229,6 +228,15 @@ NAVIGATION */
     color: gray;
 }
 
+/* Services */
+.services.title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: gray;
+    width: 90%;
+    padding-bottom: 7px;
+}
+
 @media only screen and (max-width: 1024px) {
     .container {
         width: 90%;
@@ -280,11 +288,14 @@ NAVIGATION */
     /* PRODUCTS*/
     .products.title {
         font-size: 1.4em;
-        font-weight: bold;
-        color: gray;
     }
 
     .scroller-platter.outer {
         padding: 10px 0 40px;
+    }
+
+    /* SERVICES */
+    .services.title {
+        font-size: 1.4em;
     }
 }
