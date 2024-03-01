@@ -10,7 +10,8 @@ body {
 /* SCROLL BUTTONS */
 .scroller-button-wrapper {
     display: flex;
-    padding-bottom: 5px;
+    justify-content: flex-end;
+    padding-bottom: 20px;
     color: rgb(238, 238, 238);
     font-weight: bold;
 }
@@ -262,5 +263,9 @@ body {
 
     .scroller-platter.outer {
         padding: 10px 0 40px;
+    }
+
+    .scroller-button-wrapper {
+        display: none;
     }
 }
