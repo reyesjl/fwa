@@ -126,8 +126,8 @@
         </div>
         <div class="scroller-platter outer">
             {% for product in latest_products %}
-            <a href="#" class="scroller-platter item">
-                <div class="scroller-platter itemlink">
+            <div class="scroller-platter item">
+                <a href="" class="scroller-platter itemlink">
                     <div class="scroller-platter itemcard">
                         <div class="itemcard content">
                             <div class="product-category">{{ product.category }}</div>
@@ -138,8 +138,8 @@
                             <img src="{{ product.main_image.image.url }}" alt="{{ product.name }}" />
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
             {% empty %}
             <p>No products to show here.</p>
             {% endfor %}

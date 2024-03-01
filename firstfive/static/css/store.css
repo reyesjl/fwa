@@ -173,6 +173,10 @@ NAVIGATION */
     margin-right: 5px;
 }
 
+.scroller-platter.itemlink {
+    color: black;
+}
+
 .scroller-platter.itemcard {
     border-radius: 18px;
     height: 380px;
