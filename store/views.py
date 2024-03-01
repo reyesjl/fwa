@@ -1,3 +1,4 @@
+from datetime import datetime, timedelta
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.urls import reverse
@@ -9,25 +10,20 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def store(request):
-    # Fetch products for each category
-    featured_products = Product.objects.filter(category='Featured', is_available=True).prefetch_related('variants', 'images')
-    vintage_products = Product.objects.filter(category='Vintage', is_available=True).prefetch_related('variants', 'images')
-    signed_products = Product.objects.filter(category='Signed', is_available=True).prefetch_related('variants', 'images')
-    team_products = Product.objects.filter(category='Team', is_available=True).prefetch_related('variants', 'images')
-    donation_products = Product.objects.filter(category='Donation', is_available=True).prefetch_related('variants', 'images')
-
-    # Optionally, you can fetch the first variant and main image for each product
-    for products in [featured_products, vintage_products, signed_products, team_products, donation_products]:
-        for product in products:
-            product.first_variant = product.variants.first()
-            product.main_image = product.images.filter(is_main=True).first()
+    # Calculate the date one month ago
+    one_month_ago = datetime.now() - timedelta(days=30)
+    
+    # Retrieve products added within the last month
+    latest_products = Product.objects.filter(created_at__gte=one_month_ago)
+    
+    # Fetch the first variant, main image, and price for each product
+    for product in latest_products:
+        product.first_variant = product.variants.first()
+        product.main_image = product.images.filter(is_main=True).first()
+        product.price = product.first_variant.price if product.first_variant else None
 
     context = {
-        'featured_products': featured_products,
-        'vintage_products': vintage_products,
-        'signed_products': signed_products,
-        'team_products': team_products,
-        'donation_products': donation_products
+        'latest_products': latest_products,
         }
     return render(request, 'store/store.html', context)
 

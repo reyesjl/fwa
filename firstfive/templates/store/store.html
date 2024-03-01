@@ -108,48 +108,24 @@
 <div class="product-shelf container">
     <div class="scroller-overflow">
         <div class="scroller-platter outer">
+            {% for product in latest_products %}
             <div class="scroller-platter item">
                 <div class="scroller-platter itemlink">
                     <div class="scroller-platter itemcard">
                         <div class="itemcard content">
-                            <div class="product-category">Vintage</div>
-                            <div class="product-name">Pick up a piece of rugby history.</div>
-                            <div class="product-price">$19.99</div>
+                            <div class="product-category">{{ product.category }}</div>
+                            <div class="product-name">{{ product.title }}</div>
+                            <div class="product-price">${{ product.price }}</div>
                         </div>
                         <div class="itemcard image">
-                            <img src="" />
+                            <img src="{{ product.main_image.image.url }}" alt="{{ product.name }}" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scroller-platter item">
-                <div class="scroller-platter itemlink">
-                    <div class="scroller-platter itemcard">
-                        <div class="itemcard content">
-                            <div class="product-category">Vintage</div>
-                            <div class="product-name">Pick up a piece of rugby history.</div>
-                            <div class="product-price">$19.99</div>
-                        </div>
-                        <div class="itemcard image">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroller-platter item">
-                <div class="scroller-platter itemlink">
-                    <div class="scroller-platter itemcard">
-                        <div class="itemcard content">
-                            <div class="product-category">Vintage</div>
-                            <div class="product-name">Pick up a piece of rugby history.</div>
-                            <div class="product-price">$19.99</div>
-                        </div>
-                        <div class="itemcard image">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% empty %}
+            <p>No products to show here.</p>
+            {% endfor %}
         </div>
     </div>
 </div>
