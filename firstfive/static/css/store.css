@@ -98,6 +98,10 @@ body {
 
 /* PRODUCTS */
 
+.products.title {
+    font-size: 1.6em;
+}
+
 @media only screen and (max-width: 1024px) {
     .container {
         width: 90%;
