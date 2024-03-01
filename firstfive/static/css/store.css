@@ -28,7 +28,14 @@ body {
     align-items: center;
     justify-content: center;
     margin-right: 10px;
-    z-index: 99;
+    z-index: 10;
+    user-select: none;
+    cursor: pointer;
+}
+
+.scroller-button:hover {
+    background: rgba(164, 164, 164, 0.78);
+    color: white;
 }
 
 /* STORE BANNER */
@@ -80,7 +87,8 @@ body {
     text-decoration: underline;
 }
 
-/* CATEGORY NAVIGATION */
+/* CATEGORY Lifting Kit
+NAVIGATION */
 .category.container {
     width: 100%;
 }
