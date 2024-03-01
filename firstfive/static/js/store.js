@@ -54,6 +54,20 @@ function controlProductSlider(direction) {
   }
 }
 
+
+// Function to control product slider
+function controlServicesSlider(direction) {
+  const productSlider = document.querySelector('.scroller-overflow.services');
+  const itemWidth = productSlider.offsetWidth; // Width of the visible area
+  const scrollAmount = itemWidth / 2; // Amount to scroll each time
+
+  if (direction === 'left') {
+    productSlider.scrollLeft -= scrollAmount;
+  } else {
+    productSlider.scrollLeft += scrollAmount;
+  }
+}
+
 // Run functions when the document is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   console.log("DOM loaded");
@@ -83,5 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.scroller-button.right')[1].addEventListener('click', function() {
     //console.log("Right button for product slider clicked");
     controlProductSlider('right');
+  });
+
+  // Event listeners for product slider buttons
+  console.log("Adding event listeners for services slider buttons");
+  document.querySelectorAll('.scroller-button.left')[2].addEventListener('click', function() {
+    //console.log("Left button for product slider clicked");
+    controlServicesSlider('left');
+  });
+
+  document.querySelectorAll('.scroller-button.right')[2].addEventListener('click', function() {
+    //console.log("Right button for product slider clicked");
+    controlServicesSlider('right');
   });
 });

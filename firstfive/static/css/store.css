@@ -237,6 +237,54 @@ NAVIGATION */
     padding-bottom: 7px;
 }
 
+.scroller-platter.servicecard {
+    border-radius: 18px;
+    height: 240px;
+    box-shadow: 2px 4px 12px rgba(0,0,0,.08);
+    transition: all .3s cubic-bezier(0,0,.5,1);
+    position: relative;
+    overflow: hidden;
+}
+
+.scroller-platter.servicecard:hover {
+    border-radius: 18px;
+    box-shadow: 2px 4px 12px rgba(0,0,0,.16);
+    transition: all .3s cubic-bezier(0,0,.5,1);
+    cursor: pointer;
+}
+
+.servicecard.content {
+    padding: 20px;
+    position: absolute;
+    z-index: 9;
+}
+
+.servicecard.image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+.servicecard.image img {
+    width: 100%;
+}
+
+.service-green {
+    color: #68cc45;
+}
+
+.service-blue {
+    color: #06c;
+}
+
+.service-purple {
+    color: #ac39ff;
+}
+
+.service-red {
+    color: darkred;
+}
+
 @media only screen and (max-width: 1024px) {
     .container {
         width: 90%;
