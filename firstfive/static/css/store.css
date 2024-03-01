@@ -180,7 +180,7 @@ NAVIGATION */
 
 .scroller-platter.itemcard {
     border-radius: 18px;
-    height: 380px;
+    height: 425px;
     box-shadow: 2px 4px 12px rgba(0,0,0,.08);
     transition: all .3s cubic-bezier(0,0,.5,1);
     position: relative;
