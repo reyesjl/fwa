@@ -118,6 +118,8 @@ NAVIGATION */
     align-items: center;
     margin-right: 30px;
     height: 110px;
+    text-decoration: none;
+    color: black;
 }
 
 .scroller-itemlist {
