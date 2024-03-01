@@ -29,7 +29,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'f5index',
     'store',
-    'product',
     'submissions',
 ]
 

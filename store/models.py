@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 
 class Product(models.Model):
@@ -6,7 +7,7 @@ class Product(models.Model):
     category = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
     is_available = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
     @classmethod
