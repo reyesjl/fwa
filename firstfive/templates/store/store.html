@@ -126,7 +126,7 @@
         </div>
         <div class="scroller-platter outer">
             {% for product in latest_products %}
-            <div class="scroller-platter item">
+            <a href="#" class="scroller-platter item">
                 <div class="scroller-platter itemlink">
                     <div class="scroller-platter itemcard">
                         <div class="itemcard content">
@@ -139,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
             {% empty %}
             <p>No products to show here.</p>
             {% endfor %}
