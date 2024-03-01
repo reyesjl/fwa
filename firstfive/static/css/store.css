@@ -97,6 +97,9 @@ body {
 }
 
 /* PRODUCTS */
+.product-banner-row {
+    padding: 50px 0;
+}
 
 .products.title {
     font-size: 1.6em;
