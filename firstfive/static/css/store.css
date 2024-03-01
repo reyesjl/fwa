@@ -157,6 +157,7 @@ NAVIGATION */
     align-items: center;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+    padding-bottom: 20px;
 }
 
 .scroller-overflow::-webkit-scrollbar {
