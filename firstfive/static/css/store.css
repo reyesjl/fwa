@@ -100,6 +100,8 @@ body {
 
 .products.title {
     font-size: 1.6em;
+    font-weight: bold;
+    color: gray;
 }
 
 @media only screen and (max-width: 1024px) {
