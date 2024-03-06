@@ -95,6 +95,11 @@ body {
     color: white;
 }
 
+.footer-column-link {
+    color: white;
+    text-decoration: none;
+}
+
 .footer-title {
     color: gray;
     font-weight: bold;
