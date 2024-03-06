@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission
+from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue
 
 class BaseSubmissionAdmin(admin.ModelAdmin):
     list_display = ['firstname', 'lastname', 'email', 'phone', 'status']
+    list_filter = ['status']
+
+class IssueSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['email', 'problem_description', 'status']
     list_filter = ['status']
 
 class RecruitingSubmissionAdmin(BaseSubmissionAdmin):
@@ -28,3 +32,4 @@ admin.site.register(RecruitingSubmission, RecruitingSubmissionAdmin)
 admin.site.register(ToursSubmission, ToursSubmissionAdmin)
 admin.site.register(CanterburyKitSubmission, CanterburyKitSubmissionAdmin)
 admin.site.register(TeamItemSubmission, TeamItemSubmissionAdmin)
+admin.site.register(Issue, IssueSubmissionAdmin)
