@@ -80,7 +80,7 @@ body {
 }
 
 .footer-starter-wrapper {
-    max-width: 900px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 0 20px;
     margin-bottom: 20px;
@@ -101,7 +101,7 @@ body {
 }
 
 .footer-wrapper {
-    max-width: 900px;
+    max-width: 80%;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
@@ -138,5 +138,13 @@ body {
     .footer-column {
         width: 100%;
         margin-bottom: 40px;
+    }
+
+    .footer-starter-wrapper {
+        max-width: 90%;
+    }
+
+    .footer-wrapper {
+        max-width: 90%;
     }
 }
