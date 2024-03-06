@@ -1,7 +1,36 @@
 from django.utils import timezone
 from django.db import models
+from django.db.models import Subquery, OuterRef
+
+class ProductManager(models.Manager):
+    """
+    Custom manager for the Product model.
+    Provides additional queryset methods and optimizations.
+    """
+
+    def get_queryset(self):
+        """
+        Return a queryset that filters only available products.
+        """
+        return super().get_queryset().filter(is_available=True)
+    
+    def get_products_by_category(self, category_name):
+        """
+        Return a queryset of products filtered by category name.
+        """
+        return self.get_queryset().filter(category=category_name)
+    
+    def get_products_by_brand(self, brand_name):
+        """
+        Return a queryset of products filtered by brand name.
+        """
+        return self.get_queryset().filter(brand=brand_name)
 
 class Product(models.Model):
+    """
+    Model representing a product.
+    """
+
     title = models.CharField(max_length=100)
     description = models.TextField()
     category = models.CharField(max_length=50)
@@ -10,13 +39,13 @@ class Product(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
 
-    @classmethod
-    def get_products_by_category(cls, category_name):
-        return cls.objects.filter(category=category_name)
+    objects = ProductManager() # custom product manager
 
-    @classmethod
-    def get_products_by_brand(cls, brand_name):
-        return cls.objects.filter(brand=brand_name)
+    def get_main_variant(self):
+        """
+        Get available variants for the product.
+        """
+        return self.variants.filter(stock_quantity__gt=0).first()
 
     def get_available_variants(self):
         """
@@ -31,7 +60,10 @@ class Product(models.Model):
         return self.category == 'Team'
 
     def get_main_image(self):
-        return self.images.filter(is_main=True).first()
+        """
+        Get the main image for the product.
+        """
+        return self.images.filter(is_main=True).first().image.url
 
     def is_in_stock(self):
         """
@@ -52,9 +84,16 @@ class Product(models.Model):
         return self.variants.filter(stock_quantity__gt=0).values_list('color', flat=True).distinct()
 
     def __str__(self):
+        """
+        Return the title of the product.
+        """
         return self.title
 
 class ProductVariant(models.Model):
+    """
+    Model representing a product variant.
+    """
+
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='variants')
     size = models.CharField(max_length=20)
     color = models.CharField(max_length=50, blank=True, null=True)
@@ -64,12 +103,22 @@ class ProductVariant(models.Model):
     stock_quantity = models.IntegerField()
 
     def __str__(self):
+        """
+        Return a string representation of the product variant.
+        """
         return f"{self.product.title} - {self.size} ({self.color}, {self.material})"
 
 class ProductImage(models.Model):
+    """
+    Model representing a product image.
+    """
+
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='product_images/')
     is_main = models.BooleanField(default=False)
 
     def __str__(self):
+        """
+        Return a string representation of the product image.
+        """
         return f"Image for {self.product.title}"

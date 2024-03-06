@@ -137,10 +137,10 @@
                         <div class="itemcard content">
                             <div class="product-category">{{ product.category }}</div>
                             <div class="product-name">{{ product.title }}</div>
-                            <div class="product-price">${{ product.price }}</div>
+                            <div class="product-price">${{ product.get_main_variant.price }}</div>
                         </div>
                         <div class="itemcard image">
-                            <img src="{{ product.main_image.image.url }}" alt="{{ product.name }}" />
+                            <img src="{{ product.get_main_image }}" alt="{{ product.title }}" />
                         </div>
                     </div>
                 </a>

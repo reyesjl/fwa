@@ -2,7 +2,8 @@ from datetime import datetime, timedelta
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.urls import reverse
-from .models import Product, ProductVariant
+from .models import Product, ProductVariant, ProductImage
+from django.db.models import Subquery, OuterRef
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 import stripe
@@ -10,60 +11,35 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def store(request):
-    # Calculate the date one month ago
+    # Set date range
     one_month_ago = datetime.now() - timedelta(days=30)
-    
-    # Retrieve products added within the last month
-    latest_products = Product.objects.filter(created_at__gte=one_month_ago, is_available=True)
-    
-    # Fetch the first variant, main image, and price for each product
-    for product in latest_products:
-        product.first_variant = product.variants.first()
-        product.main_image = product.images.filter(is_main=True).first()
-        product.price = product.first_variant.price if product.first_variant else None
 
-    context = {
-        'latest_products': latest_products,
-        }
+    # Fetch latest products within date range
+    latest_products = Product.objects.all().filter(created_at__gte=one_month_ago)
+
+    context = {'latest_products': latest_products}
     return render(request, 'store/store.html', context)
 
-def products_by_category(request, category_name):
-    # Fetch products for the specified category
-    category_products = Product.get_products_by_category(category_name).filter(is_available=True).prefetch_related('variants', 'images')
+def products_by_category(request):
+    category_name = request.GET.get('category_name')
+    category_products = Product.objects.get_products_by_category(category_name)
 
-    # Optionally, you can fetch the first variant and main image for each product
-    for product in category_products:
-        product.first_variant = product.variants.first()
-        product.main_image = product.get_main_image()
-
-    context = {
-        'category_name': category_name,
-        'category_products': category_products
-    }
+    context = {'category_name': category_name, 'category_products': category_products}
     return render(request, 'store/products_by_category.html', context)
 
-def products(request):
-    products = Product.objects.filter(is_available=True)
-    return render(request, 'store/products.html', {'products': products})
-
 def product_details(request, product_id):
-    product = get_object_or_404(Product, id=product_id)
-    product_with_prefetched_data = Product.objects.prefetch_related('variants', 'images').get(id=product_id)
-    variants = product_with_prefetched_data.get_available_variants()
-    images = product_with_prefetched_data.images.all()
-
-    # Extract unique colors from available variants
+    product = get_object_or_404(Product.objects.with_first_variant_and_main_image(), id=product_id)
+    variants = product.variants.all()
+    images = product.images.all()
     unique_colors = set(variant.color for variant in variants)
-
-    # Check if this is a team item
     team_item = product.is_team_item()
-    
+
     context = {
         "product": product, 
         "variants": variants, 
         "images": images,
         "team_item": team_item,
-        "unique_colors": unique_colors,  # Pass unique colors to the template
+        "unique_colors": unique_colors,
     }
     return render(request, 'store/product_details.html', context)
 
