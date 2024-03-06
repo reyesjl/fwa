@@ -41,4 +41,29 @@ class Issue(models.Model):
     def __str__(self):
         return f"Issue reported by {self.email}"
     
+class Feedback(models.Model):
+    email = models.EmailField()
+    feedback = models.TextField()
+    status = models.CharField(choices=STATUS_OPTIONS, max_length=20, default='Unseen')
+
+    def __str__(self):
+        return f"Feedback submitted by {self.email}"
     
+class Design(models.Model):
+    email = models.EmailField()
+    design_description = models.TextField()
+    status = models.CharField(choices=STATUS_OPTIONS, max_length=20, default='Unseen')
+
+    def __str__(self):
+        return f"Design submitted by {self.email}"
+
+class Specialist(models.Model):
+    firstname = models.CharField(max_length=50)
+    lastname = models.CharField(max_length=50)
+    email = models.EmailField()
+    cell = models.CharField(max_length=15)
+    help_details = models.TextField()
+    status = models.CharField(choices=STATUS_OPTIONS, max_length=20, default='Unseen')
+
+    def __str__(self):
+        return f"Specialist request submitted by {self.email}"

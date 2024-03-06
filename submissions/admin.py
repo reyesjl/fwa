@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue
+from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue, Feedback, Design, Specialist
 
 class BaseSubmissionAdmin(admin.ModelAdmin):
     list_display = ['firstname', 'lastname', 'email', 'phone', 'status']
@@ -7,6 +7,18 @@ class BaseSubmissionAdmin(admin.ModelAdmin):
 
 class IssueSubmissionAdmin(admin.ModelAdmin):
     list_display = ['email', 'problem_description', 'status']
+    list_filter = ['status']
+
+class DesignSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['email', 'design_description', 'status']
+    list_filter = ['status']
+
+class FeedbackSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['email', 'feedback', 'status']
+    list_filter = ['status']
+
+class SpecialistSubmissionAdmin(admin.ModelAdmin):
+    list_display = ['firstname', 'lastname', 'email', 'cell', 'help_details', 'status']
     list_filter = ['status']
 
 class RecruitingSubmissionAdmin(BaseSubmissionAdmin):
@@ -33,3 +45,6 @@ admin.site.register(ToursSubmission, ToursSubmissionAdmin)
 admin.site.register(CanterburyKitSubmission, CanterburyKitSubmissionAdmin)
 admin.site.register(TeamItemSubmission, TeamItemSubmissionAdmin)
 admin.site.register(Issue, IssueSubmissionAdmin)
+admin.site.register(Feedback, FeedbackSubmissionAdmin)
+admin.site.register(Design, DesignSubmissionAdmin)
+admin.site.register(Specialist, SpecialistSubmissionAdmin)

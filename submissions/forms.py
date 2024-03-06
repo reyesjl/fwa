@@ -1,5 +1,5 @@
 from django import forms
-from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue
+from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue, Feedback, Design, Specialist
 
 class RecruitingSubmissionForm(forms.ModelForm):
     class Meta:
@@ -66,3 +66,34 @@ class IssueForm(forms.ModelForm):
             'email': 'Email',
             'problem_description': 'Problem Description',
         }
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model = Feedback
+        exclude = ['status']
+        labels = {
+            'email': 'Email',
+            'feedback': 'Feedback',
+        }
+
+class DesignForm(forms.ModelForm):
+    class Meta:
+        model = Design
+        exclude = ['status']
+        labels = {
+            'email': 'Email',
+            'design_description': 'Design Description',
+        }
+
+class SpecialistForm(forms.ModelForm):
+    class Meta:
+        model = Specialist
+        exclude = ['status']
+        labels = {
+            'firstname': 'First Name',
+            'lastname': 'Last Name',
+            'email': 'Email',
+            'cell': 'Cell Phone',
+            'help_details': 'Help Details',
+        }
+
