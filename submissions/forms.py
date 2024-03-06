@@ -1,5 +1,5 @@
 from django import forms
-from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission
+from .models import RecruitingSubmission, ToursSubmission, CanterburyKitSubmission, TeamItemSubmission, Issue
 
 class RecruitingSubmissionForm(forms.ModelForm):
     class Meta:
@@ -56,4 +56,13 @@ class TeamItemSubmissionForm(forms.ModelForm):
             'team_primary_color': 'Team Main Color',
             'team_seconday_color': 'Team Secondary Color',
             'teamsize': 'Team Size',
+        }
+
+class IssueForm(forms.ModelForm):
+    class Meta:
+        model = Issue
+        exclude = ['status']
+        labels = {
+            'email': 'Email',
+            'problem_description': 'Problem Description',
         }

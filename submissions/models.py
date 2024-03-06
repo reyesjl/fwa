@@ -32,5 +32,13 @@ class TeamItemSubmission(BaseSubmissionModel):
     team_primary_color = models.CharField(max_length=50, default='red')
     team_secondary_color = models.CharField(max_length=50, default='black')
     teamsize = models.IntegerField(default="15", validators=[MinValueValidator(15),])
+
+class Issue(models.Model):
+    email = models.EmailField()
+    problem_description = models.TextField()
+    status = models.CharField(choices=STATUS_OPTIONS, max_length=20, default='Unseen')
+
+    def __str__(self):
+        return f"Issue reported by {self.email}"
     
     
