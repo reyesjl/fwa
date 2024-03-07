@@ -1,52 +1,66 @@
-.banner {
-    padding-top: 150px;
-    background-image: url('/static/media/services/services-bg.jpg');
-    background-size: cover;
-    background-position: right bottom;
-    background-repeat: no-repeat;
+.section-hero {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 91px;
+    padding-bottom: 100px;
+}
+
+.theme-dark {
+    background-color: black;
+    color: #f5f5f7;
+}
+
+.hero-headline {
+    font-size: 96px;
+    font-weight: bold;
+}
+
+.copy-wrapper {
+    max-width: 800px;
+    margin: 25px auto 0 auto;
+}
+
+.hero-tagline {
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: -0.037em;
+}
+
+br.small {
+    display: none;
+}
+
+.banner-wrapper {
+    display: flex;
+    align-items: center;
+    background: #000000e6;
+    color: white;
+    height: 148px;
+    justify-content: center;
+}
+
+.banner-icon img {
+    width: 100px;
+}
+
+.banner-content {
+    padding: 0 20px;
+    font-weight: bold;
+    font-size: 21px;
+}
+
+.banner-link a {
+    padding: 12px 22px;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
 }
 
 .container {
     max-width: 90%;
     margin: 0 auto;
-}
-
-.banner-section {
-
-}
-
-.title-wrapper {
-    color: white;
-    padding: 150px 0;
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-}
-
-.banner-title {
-    font-weight: normal;
-    display: flex;
-    margin: 0; 
-    font-size: 5em;
-}
-
-.banner-subtitle {
-}
-
-.statement-wrapper {
-    padding: 50px 0;
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.statement-title {
-    font-weight: bold;
-}
-
-.statement {
-    color: gray;
-    font-size: 1.4rem;
 }
 
 .services-container {
@@ -86,16 +100,38 @@
 }
 
 @media only screen and (max-width: 769px) {
+    .hero-headline {
+        font-size: 46px;
+    }
+
+    br.small {
+        display: block;
+    }
+
+    .copy-wrapper {
+        max-width: 85%;
+    }
+
+    .banner-wrapper {
+        flex-direction: column;
+        text-align: center;
+        height: 288px;
+    }
+
+    .banner-icon {
+        margin-bottom: 20px;
+    }
+
+    .banner-content {
+        margin-bottom: 40px;
+    }
+
+    .banner-link {
+        margin-bottom: 25px;
+    }
+
     .banner-title {
         font-size: 3em;
-    }
-
-    .statement {
-        font-size: 1.2rem;
-    }
-
-    .statement-wrapper {
-        width: 100%;
     }
 
     .service {
