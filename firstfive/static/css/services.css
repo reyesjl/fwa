@@ -96,7 +96,7 @@ br.small {
 
 /* Video styles */
 .video-wrapper {
-    max-height: 600px;
+    max-height: 800px;
     overflow: clip;
 }
 
