@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'f5index',
     'store',
     'submissions',
+    'plans',
 ]
 
 MIDDLEWARE = [

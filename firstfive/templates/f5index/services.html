@@ -58,24 +58,21 @@
         <div id="dynamic-gallery-item-a">
             <div class="marquees images-loading">
                 <ul class="marquees-list">
-                    <li class="marquees-tile">
-                        <a class="marquees-link" href="#">
-                            <div class="plan-title">Get Faster</div>
-                            <div class="plan-category">Speed</div>
-                        </a>
-                    </li>
-                    <li class="marquees-tile">
-                        <a class="marquees-link" href="#">
-                            <div class="plan-title">Eat & Perform</div>
-                            <div class="plan-category">Nutrition</div>
-                        </a>
-                    </li>
-                    <li class="marquees-tile">
-                        <a class="marquees-link" href="#">
-                            <div class="plan-title">Lift Heavier</div>
-                            <div class="plan-category">Strength</div>
-                        </a>
-                    </li>
+                    {% for plan in plans %}
+                        <li class="marquees-tile">
+                            <a class="marquees-link" href="#">
+                                <div class="plan-title">{{ plan.plan_name }}</div>
+                                <div class="plan-category">{{ plan.plan_category }}</div>
+                            </a>
+                        </li>
+                        {% empty %}
+                        <li class="marquees-tile">
+                            <a class="marquees-link" href="#">
+                                <div class="plan-title">No plans found.</div>
+                                <div class="plan-category">Empty</div>
+                            </a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

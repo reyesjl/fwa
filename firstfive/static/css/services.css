@@ -186,6 +186,12 @@ br.small {
     }
 }
 
+@media only screen and (max-width: 1024px) {
+    .video-wrapper {
+        max-height: 350px;
+    }
+}
+
 @media only screen and (max-width: 769px) {
     .hero-headline {
         font-size: 46px;

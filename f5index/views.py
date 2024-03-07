@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from plans.models import PlayerPlan
 
 def home(request):
     return render(request, 'f5index/index.html')
@@ -24,6 +25,10 @@ def training(request):
 def club_mgmt(request):
     return render(request, 'f5index/club_mgmt.html')
 
-
 def services(request):
-    return render(request, 'f5index/services.html')
+    plans = PlayerPlan.objects.all()
+    
+    context = {
+        'plans': plans,
+    }
+    return render(request, 'f5index/services.html', context)
