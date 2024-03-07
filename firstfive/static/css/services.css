@@ -172,6 +172,10 @@ br.small {
     width: 80%;
 }
 
+.plan-image img {
+    border-radius: 16px;
+}
+
 .plan-title {
     color: #1d1d1f;
 }
