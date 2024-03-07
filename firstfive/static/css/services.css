@@ -23,7 +23,7 @@
 
 .hero-tagline {
     font-weight: bold;
-    font-size: 17px;
+    font-size: 21px;
     letter-spacing: -0.037em;
 }
 
@@ -102,6 +102,10 @@ br.small {
 @media only screen and (max-width: 769px) {
     .hero-headline {
         font-size: 46px;
+    }
+
+    .hero-tagline {
+        font-size: 17px;
     }
 
     br.small {
