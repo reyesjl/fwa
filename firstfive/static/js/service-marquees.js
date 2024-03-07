@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Start scrolling once the DOM is loaded
-  var scrollInterval = setInterval(startScrolling, 50); // Adjust the interval for slower or faster scrolling
+  var scrollInterval = setInterval(startScrolling, 80); // Adjust the interval for slower or faster scrolling
   
   // Pause scrolling when the user hovers
   var marqueeList = document.querySelector('.marquees-list');
@@ -16,6 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Resume scrolling when the user stops hovering
   marqueeList.addEventListener('mouseout', function() {
-    scrollInterval = setInterval(startScrolling, 50); // Restart scrolling
+    scrollInterval = setInterval(startScrolling, 80); // Restart scrolling
   });
 });
