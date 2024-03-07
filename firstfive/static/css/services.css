@@ -180,6 +180,12 @@ br.small {
     color: gray;
 }
 
+@media only screen and (max-width: 1280px) {
+    .video-wrapper {
+        max-height: 700px;
+    }
+}
+
 @media only screen and (max-width: 980px) {
     .video-wrapper {
         max-height: 550px;
