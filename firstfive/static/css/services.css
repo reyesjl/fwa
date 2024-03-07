@@ -151,7 +151,11 @@ br.small {
     margin: 0;
     list-style-type: none;
     display: flex;
-    overflow: hidden;
+    overflow-x: auto;
+}
+
+.marquees-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
 }
 
 .marquees-tile {
