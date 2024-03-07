@@ -61,6 +61,9 @@
                     {% for plan in plans %}
                         <li class="marquees-tile">
                             <a class="marquees-link" href="#">
+                                <div class="plan-image">
+                                    <img src="{{ plan.plan_picture.url }}" />
+                                </div>
                                 <div class="plan-title">{{ plan.plan_name }}</div>
                                 <div class="plan-category">{{ plan.plan_category }}</div>
                             </a>
